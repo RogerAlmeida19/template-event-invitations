@@ -13,11 +13,32 @@ const EventHero: React.FC = () => {
         }}
       />
 
-      {/* Elementos decorativos sutiles */}
-      <div className="absolute top-20 left-10 w-32 h-32 rounded-full bg-white/10 blur-xl animate-pulse" />
-      <div className="absolute bottom-20 right-10 w-24 h-24 rounded-full bg-white/10 blur-xl animate-pulse delay-1000" />
-      <span className="butterfly top-16 right-16">🦋</span>
-      <span className="butterfly bottom-24 left-16 text-5xl">🦋</span>
+      {/* Hadas flotando y partículas mágicas */}
+      <span className="fairy absolute left-1/2 top-28 -translate-x-1/2 animate-fairy-float" style={{zIndex:3}}>
+        <svg width="38" height="38" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="24" cy="24" r="10" fill="#FFF9C4" opacity="0.7" />
+          <ellipse cx="24" cy="18" rx="5" ry="1.7" fill="#FFE082" opacity="0.7" />
+          <ellipse cx="18" cy="28" rx="2.5" ry="1.2" fill="#FFF59D" opacity="0.7" />
+          <ellipse cx="30" cy="28" rx="2.5" ry="1.2" fill="#FFFDE7" opacity="0.7" />
+          <circle cx="24" cy="24" r="2.5" fill="#fffde4" />
+        </svg>
+      </span>
+      <span className="fairy absolute left-[60%] top-44 animate-fairy-float delay-1000" style={{zIndex:3}}>
+        <svg width="28" height="28" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="24" cy="24" r="7" fill="#FFF9C4" opacity="0.7" />
+          <ellipse cx="24" cy="16" rx="3.5" ry="1.2" fill="#FFE082" opacity="0.7" />
+          <ellipse cx="17" cy="30" rx="1.5" ry="0.7" fill="#FFF59D" opacity="0.7" />
+          <ellipse cx="31" cy="30" rx="1.5" ry="0.7" fill="#FFFDE7" opacity="0.7" />
+          <circle cx="24" cy="24" r="1.5" fill="#fffde4" />
+        </svg>
+      </span>
+      {/* Partículas mágicas */}
+      {[...Array(12)].map((_, i) => (
+        <span
+          key={`sparkle-${i}`}
+          className={`absolute sparkle sparkle-${i}`}
+        />
+      ))}
 
       <div className="relative z-10 text-center px-6 max-w-4xl mx-auto">
         {/* Título principal con animación */}
@@ -26,10 +47,10 @@ const EventHero: React.FC = () => {
           style={{ animationDelay: '0.2s' }}
         >
           <h1
-            className="text-6xl md:text-8xl font-bold mb-4 bg-gradient-to-r from-emerald-700 via-lime-400 to-emerald-700 bg-clip-text text-transparent"
-            style={{ fontFamily: eventConfig.fonts.heading }}
+            className="font-dancing text-6xl md:text-8xl font-bold mb-6 bg-gradient-to-r from-[#AEE9D1] via-[#C3B1E1] to-[#B39DDB] bg-clip-text text-transparent"
+            style={{ textShadow: '0 6px 32px rgba(0,0,0,0.35), 0 2px 0 #fff' }}
           >
-            {eventConfig.event.couple}
+            Valentina
           </h1>
           <div className="w-24 h-1 bg-gradient-to-r from-emerald-500 to-lime-300 mx-auto rounded-full" />
         </div>
@@ -40,8 +61,7 @@ const EventHero: React.FC = () => {
           style={{ animationDelay: '0.4s' }}
         >
           <h2
-            className="text-2xl md:text-3xl text-gray-700 mb-2"
-            style={{ fontFamily: eventConfig.fonts.accent }}
+            className="fairytale-font text-2xl md:text-3xl text-gray-700 mb-2"
           >
             {eventConfig.event.title}
           </h2>

@@ -12,7 +12,6 @@ const CoupleStory: React.FC = () => {
         <div className="text-center mb-16">
           <h2
             className="text-4xl md:text-5xl font-bold text-gray-800 mb-4"
-            style={{ fontFamily: eventConfig.fonts.heading }}
           >
             {eventConfig.story.title}
           </h2>
@@ -24,7 +23,6 @@ const CoupleStory: React.FC = () => {
           <div className={`space-y-6 ${eventConfig.animations.enabled ? 'animate-fade-in' : ''}`}>
             <p
               className="text-lg text-gray-700 leading-relaxed"
-              style={{ fontFamily: eventConfig.fonts.body }}
             >
               {eventConfig.story.content}
             </p>
@@ -39,19 +37,16 @@ const CoupleStory: React.FC = () => {
                 />
                 <h3
                   className="text-xl font-semibold text-gray-800 mb-1"
-                  style={{ fontFamily: eventConfig.fonts.heading }}
                 >
                   {eventConfig.couple.partner1.name}
                 </h3>
                 <p
                   className="text-emerald-700 font-medium"
-                  style={{ fontFamily: eventConfig.fonts.accent }}
                 >
                   {eventConfig.couple.partner1.role}
                 </p>
                 <p
                   className="text-sm text-gray-600 mt-2"
-                  style={{ fontFamily: eventConfig.fonts.body }}
                 >
                   {eventConfig.couple.partner1.description}
                 </p>

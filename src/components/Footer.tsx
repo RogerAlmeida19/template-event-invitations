@@ -17,14 +17,12 @@ export default function Footer() {
               </div>
               <h3
                 className="text-xl font-bold text-white"
-                style={{ fontFamily: eventConfig.fonts.heading }}
               >
                 {eventConfig.event.couple}
               </h3>
             </div>
             <p
               className="text-gray-400 mb-4"
-              style={{ fontFamily: eventConfig.fonts.body }}
             >
               {eventConfig.event.description}
             </p>

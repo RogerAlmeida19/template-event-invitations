@@ -1,16 +1,96 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700;800&family=Dancing+Script:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Allura&family=Herr+Von+Muellerhoff&family=Tangerine:wght@400;700&family=Parisienne&family=Satisfy&family=Sacramento&display=swap');
+
+.font-dancing { font-family: 'Dancing Script', cursive; }
+.font-allura { font-family: 'Allura', cursive; }
+.font-herrvon { font-family: 'Herr Von Muellerhoff', cursive; }
+.font-tangerine { font-family: 'Tangerine', cursive; }
+.font-parisienne { font-family: 'Parisienne', cursive; }
+.font-satisfy { font-family: 'Satisfy', cursive; }
+.font-sacramento { font-family: 'Sacramento', cursive; }
+/* Animación de hadas flotando */
+.animate-fairy-float {
+  animation: fairy-float 4s ease-in-out infinite alternate;
+}
+@keyframes fairy-float {
+  0% { transform: translateY(0) scale(1); filter: brightness(1); }
+  50% { transform: translateY(-18px) scale(1.08); filter: brightness(1.2); }
+  100% { transform: translateY(0) scale(1); filter: brightness(1); }
+}
+
+/* Partículas mágicas */
+ .sparkle {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #fffde4 60%, #FFF9C4 90%, #FFE082 100%);
+  box-shadow: 0 0 8px 2px #fffde4, 0 0 16px 4px #FFE08244;
+  opacity: 0.7;
+  pointer-events: none;
+  animation: sparkle-blink 2.5s infinite alternate;
+  z-index: 2;
+}
+@keyframes sparkle-blink {
+  0% { opacity: 0.5; filter: blur(0px); }
+  50% { opacity: 1; filter: blur(2px); }
+  100% { opacity: 0.7; filter: blur(0px); }
+}
+
+/* Posiciones aleatorias para las partículas mágicas */
+.sparkle-0 { top: 12%; left: 18%; animation-delay: 0s; }
+.sparkle-1 { top: 22%; left: 70%; animation-delay: 0.5s; }
+.sparkle-2 { top: 35%; left: 40%; animation-delay: 1.2s; }
+.sparkle-3 { top: 60%; left: 15%; animation-delay: 0.8s; }
+.sparkle-4 { top: 55%; left: 80%; animation-delay: 1.7s; }
+.sparkle-5 { top: 75%; left: 30%; animation-delay: 1.1s; }
+.sparkle-6 { top: 80%; left: 60%; animation-delay: 0.3s; }
+.sparkle-7 { top: 15%; left: 55%; animation-delay: 1.4s; }
+.sparkle-8 { top: 45%; left: 85%; animation-delay: 0.9s; }
+.sparkle-9 { top: 68%; left: 50%; animation-delay: 1.9s; }
+.sparkle-10 { top: 30%; left: 10%; animation-delay: 0.6s; }
+.sparkle-11 { top: 85%; left: 75%; animation-delay: 1.3s; }
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700;800&family=Cormorant+Garamond:wght@400;500;600;700&family=Libre+Baskerville:wght@400;700&family=Lora:wght@400;700&family=Prata&family=Cinzel:wght@400;700&family=Marcellus&family=Alice&family=Sorts+Mill+Goudy&family=Quicksand:wght@400;700&family=Cardo:wght@400;700&display=swap');
+.font-cormorant { font-family: 'Cormorant Garamond', serif; }
+.font-librebaskerville { font-family: 'Libre Baskerville', serif; }
+.font-lora { font-family: 'Lora', serif; }
+.font-prata { font-family: 'Prata', serif; }
+.font-cinzel { font-family: 'Cinzel', serif; }
+.font-marcellus { font-family: 'Marcellus', serif; }
+.font-alice { font-family: 'Alice', serif; }
+.font-sorts { font-family: 'Sorts Mill Goudy', serif; }
+.font-quicksand { font-family: 'Quicksand', sans-serif; }
+.font-cardo { font-family: 'Cardo', serif; }
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+
 html {
   scroll-behavior: smooth;
 }
 
+
 body {
-  @apply bg-white text-gray-900;
-  font-family: 'Inter', sans-serif;
+  @apply bg-white text-gray-900 overflow-x-hidden text-lg md:text-xl;
+  font-family: 'Playfair Display', serif;
+  background-image: url('./assets/bg/bosque-magico-1.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+
+.font-dancing, .fairytale-font, h1, h2 {
+  font-family: 'Dancing Script', cursive !important;
+}
+
+.fairytale-font {
+  font-family: 'Great Vibes', 'Dancing Script', 'Playfair Display', cursive;
+}
+
+.bg-overlay {
+  @apply absolute inset-0 bg-emerald-100/60 backdrop-blur-sm pointer-events-none;
+  z-index: 0;
 }
 
 /* Animaciones elegantes */
