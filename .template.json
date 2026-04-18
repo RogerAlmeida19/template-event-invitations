@@ -1,0 +1,48 @@
+{
+  "name": "template-app-one-page",
+  "displayName": "One-Page Business Template",
+  "description": "Template profesional y personalizable para crear un sitio web one-page de presentación de negocios en minutos.",
+  "version": "1.0.0",
+  "keywords": [
+    "template",
+    "react",
+    "typescript",
+    "vite",
+    "tailwind",
+    "one-page",
+    "business",
+    "website"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/TU_USUARIO/template-app-one-page.git"
+  },
+  "author": "Tu Nombre",
+  "license": "MIT",
+  "documentation": {
+    "quickstart": "QUICKSTART.md",
+    "setup": "TEMPLATE_SETUP.md",
+    "customization": "CUSTOMIZATION.md",
+    "examples": "EXAMPLES.md",
+    "github": "GITHUB_UPLOAD.md"
+  },
+  "features": [
+    "Componentes React profesionales",
+    "Tailwind CSS con gradientes",
+    "Mapa interactivo (OpenStreetMap)",
+    "Galería con modal",
+    "100% Personalizable",
+    "Responsive design",
+    "Sin costos de consumo",
+    "Integración de redes sociales"
+  ],
+  "sections": [
+    "Header con navegación responsiva",
+    "Hero section impactante",
+    "About/Descripción con valores",
+    "Gallery con modal expandible",
+    "Mapa de ubicación",
+    "Social links y contacto",
+    "Footer profesional"
+  ]
+}
