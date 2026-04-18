@@ -1,53 +1,396 @@
-# Guía de Customización - Template One-Page de Presentación
+# 🎨 Guía de Personalización - Template de Invitaciones
 
-Este es un template profesional y completamente personalizable para presentar un negocio. Aquí te mostramos cómo adaptar cada aspecto a tu negocio específico.
+Esta guía te ayudará a personalizar cada aspecto de tu invitación digital para que sea única y especial.
 
-## 📋 Estructura del Proyecto
+## 📋 Configuración General
 
-```
-src/
-├── components/           # Componentes principales
-│   ├── Header.tsx       # Navegación y encabezado
-│   ├── Hero.tsx         # Sección principal
-│   ├── About.tsx        # Información del negocio
-│   ├── Gallery.tsx      # Galería de trabajos
-│   ├── Map.tsx          # Ubicación con mapa interactivo
-│   ├── SocialLinks.tsx  # Redes sociales y contacto
-│   └── Footer.tsx       # Pie de página
-├── config/
-│   └── business.ts      # Configuración de tu negocio
-└── App.tsx              # Componente principal
-```
+### Archivo Principal: `src/config/event.ts`
 
-## 🎨 Personalización Principal
+Todo se configura en un solo archivo. Abre `src/config/event.ts` y modifica los valores según tus necesidades.
 
-Todo se configura en un solo archivo: **`src/config/business.ts`**
+## 💒 Información del Evento
 
-### 1. Información General del Negocio
-
+### Configuración Básica
 ```typescript
-business: {
-  name: 'Tu Nombre de Negocio',
-  tagline: 'Tu eslogan o frase principal',
-  description: 'Descripción detallada de tu negocio',
-  email: 'tu.email@ejemplo.com',
-  phone: '+1 (555) 123-4567',
-  address: 'Tu dirección completa',
+event: {
+  type: 'wedding', // Opciones: 'wedding', 'quince', 'birthday', 'anniversary', 'other'
+  title: 'Nuestra Boda',
+  subtitle: 'Con amor y alegría celebramos este día especial',
+  couple: 'María & Carlos',
+  date: '2024-06-15T18:00:00', // FORMATO CRÍTICO: YYYY-MM-DDTHH:mm:ss
+  hashtag: '#NuestraBoda2024',
+  description: 'Con gran alegría les invitamos a celebrar el día más importante de nuestras vidas...'
 }
 ```
 
-### 2. Redes Sociales
-
-Agrega o modifica tus redes sociales:
-
+### Ubicación del Evento
 ```typescript
-socialLinks: [
+location: {
+  name: 'Salón de Eventos Elegante',
+  address: 'Av. Principal 123, Ciudad, País',
+  ceremony: 'Iglesia San José, Calle Iglesia 456' // Opcional - para ceremonias separadas
+}
+```
+
+### Detalles Adicionales
+```typescript
+dressCode: 'Formal elegante', // Código de vestimenta
+```
+
+## 👫 Información de la Pareja
+
+### Configuración de Protagonistas
+```typescript
+couple: {
+  partner1: {
+    name: 'María García',
+    role: 'Novia', // O 'Cumpleañera', 'Homenajeada', etc.
+    image: 'https://images.unsplash.com/photo-1494790108755-2616b612b786?w=300&h=400&fit=crop',
+    description: 'Arquitecta apasionada por el diseño'
+  },
+  partner2: {
+    name: 'Carlos Rodríguez',
+    role: 'Novio',
+    image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=400&fit=crop',
+    description: 'Ingeniero con corazón de artista'
+  }
+}
+```
+
+### Tips para Fotos de Perfil
+- **Relación de aspecto:** 3:4 (vertical)
+- **Resolución:** Mínimo 300x400px
+- **Estilo:** Fotos naturales, sonrientes
+- **Fondo:** Preferiblemente blanco o desenfocado
+
+## 📖 Historia de Amor (Opcional)
+
+### Activar/Desactivar
+```typescript
+story: {
+  enabled: true, // false para ocultar
+  title: 'Nuestra Historia',
+  content: 'Nos conocimos hace 5 años en una cafetería del centro...',
+  images: [
+    'https://images.unsplash.com/photo-1519741497674-611481863552?w=400&h=300&fit=crop',
+    'https://images.unsplash.com/photo-1511285560929-80b456fea0bc?w=400&h=300&fit=crop'
+  ]
+}
+```
+
+## 📅 Programa del Evento
+
+### Estructura del Programa
+```typescript
+program: [
   {
-    name: 'Instagram',
-    url: 'https://instagram.com/tu_usuario',
-    icon: 'FiInstagram',
+    time: '17:00',
+    title: 'Ceremonia Religiosa',
+    description: 'Intercambio de votos y anillos',
+    icon: '💍',
+    location: 'Iglesia San José'
   },
   {
+    time: '18:30',
+    title: 'Cóctel de Bienvenida',
+    description: 'Bebidas y canapés',
+    icon: '🍸',
+    location: 'Jardín del salón'
+  },
+  // ... más eventos
+]
+```
+
+### Emojis Recomendados
+- 💍 Ceremonia/Boda
+- 🍸 Cóctel/Bebidas
+- 🍽️ Cena/Banquete
+- 🎉 Fiesta/Baile
+- 🎂 Pastel/Cumpleaños
+- 📸 Fotos
+- 💃 Baile
+- 🎁 Regalos
+
+## 📸 Galería de Fotos
+
+### Configuración de Galería
+```typescript
+gallery: [
+  {
+    id: 1,
+    image: 'https://images.unsplash.com/photo-1519741497674-611481863552?w=400&h=400&fit=crop',
+    alt: 'Foto de la pareja',
+    title: 'Nuestra historia'
+  },
+  // ... más fotos (recomendado: 6-8 fotos)
+]
+```
+
+### Recomendaciones para Galería
+- **Cantidad:** 6-12 fotos
+- **Tamaño:** 400x400px (cuadradas)
+- **Contenido:** Mezcla de fotos de la pareja, preparativos, lugar, detalles
+- **Calidad:** Alta resolución, bien iluminadas
+
+## 💌 Sistema RSVP
+
+### Configuración RSVP
+```typescript
+rsvp: {
+  enabled: true,
+  deadline: '2024-05-15', // Fecha límite para confirmar
+  message: 'Confirma tu asistencia antes del 15 de mayo',
+  contact: {
+    phone: '+1 (555) 123-4567',
+    email: 'rsvp@tuemail.com',
+    whatsapp: 'https://wa.me/1234567890'
+  },
+  note: 'Por favor indica si asistirás acompañado y cualquier restricción alimentaria.'
+}
+```
+
+## 🎨 Tema y Colores
+
+### Paleta de Colores
+```typescript
+theme: {
+  primary: '#8B5CF6',    // Púrpura elegante
+  secondary: '#F59E0B',  // Dorado
+  accent: '#EC4899',     // Rosa suave
+  background: '#FAFAFA', // Blanco suave
+  text: '#1F2937',      // Gris oscuro
+  muted: '#6B7280'       // Gris medio
+}
+```
+
+### Paletas Recomendadas por Tipo de Evento
+
+#### Bodas Clásicas
+```typescript
+primary: '#8B5CF6',    // Púrpura
+secondary: '#F59E0B',  // Dorado
+accent: '#EC4899',     // Rosa
+```
+
+#### Bodas Elegantes
+```typescript
+primary: '#1E3A8A',    // Azul marino
+secondary: '#F59E0B',  // Dorado
+accent: '#FFFFFF',     // Blanco
+```
+
+#### XV Años
+```typescript
+primary: '#EC4899',    // Rosa
+secondary: '#F59E0B',  // Dorado
+accent: '#8B5CF6',     // Púrpura
+```
+
+#### Cumpleaños
+```typescript
+primary: '#3B82F6',    // Azul
+secondary: '#F59E0B',  // Amarillo
+accent: '#10B981',     // Verde
+```
+
+#### Aniversarios
+```typescript
+primary: '#DC2626',    // Rojo
+secondary: '#F59E0B',  // Dorado
+accent: '#FFFFFF',     // Blanco
+```
+
+## 🔤 Fuentes Tipográficas
+
+### Fuentes Configuradas
+```typescript
+fonts: {
+  heading: 'Playfair Display, serif',    // Títulos
+  body: 'Inter, sans-serif',             // Texto principal
+  accent: 'Dancing Script, cursive'      // Texto decorativo
+}
+```
+
+### Fuentes Alternativas
+- **Títulos:** 'Crimson Text', 'Lora', 'Merriweather'
+- **Cuerpo:** 'Open Sans', 'Lato', 'Roboto'
+- **Acento:** 'Great Vibes', 'Alex Brush', 'Allura'
+
+## ✨ Animaciones
+
+### Configuración de Animaciones
+```typescript
+animations: {
+  enabled: true,
+  duration: 800, // Duración en ms
+  delay: 200,    // Retraso entre elementos en ms
+  type: 'fade'   // 'fade', 'slide', 'scale'
+}
+```
+
+### Tipos de Animación
+- **fade:** Desvanecimiento suave
+- **slide:** Deslizamiento lateral
+- **scale:** Escalado con zoom
+
+## ⚙️ Configuración Avanzada
+
+### Secciones Opcionales
+```typescript
+settings: {
+  showCountdown: true,    // Mostrar contador regresivo
+  showStory: true,        // Mostrar historia de amor
+  showGallery: true,      // Mostrar galería
+  showProgram: true,      // Mostrar programa
+  showRSVP: true,         // Mostrar formulario RSVP
+  language: 'es',         // 'es', 'en'
+  currency: 'USD'         // Para regalos opcionales
+}
+```
+
+## 📱 Personalización Mobile
+
+El template es completamente responsive, pero puedes ajustar:
+
+### Breakpoints
+- **sm:** 640px (móviles pequeños)
+- **md:** 768px (tablets)
+- **lg:** 1024px (desktops)
+- **xl:** 1280px (desktops grandes)
+
+### Ajustes CSS Personalizados
+Agrega estilos personalizados en `src/index.css`:
+
+```css
+/* Ejemplo: Ajustes para móvil */
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 2.5rem;
+  }
+}
+```
+
+## 🌐 Idiomas
+
+### Soporte de Idiomas
+Actualmente soporta:
+- **es:** Español
+- **en:** Inglés
+
+### Agregar Nuevo Idioma
+1. Modifica `language: 'es'` en settings
+2. Los textos están hardcodeados en los componentes
+3. Para internacionalización completa, considera react-i18next
+
+## 📧 Integraciones
+
+### WhatsApp Directo
+```typescript
+whatsapp: 'https://wa.me/1234567890?text=Hola,%20quiero%20confirmar%20mi%20asistencia'
+```
+
+### Email con Asunto
+```typescript
+email: 'mailto:rsvp@evento.com?subject=Confirmación%20de%20Asistencia'
+```
+
+## 🖼️ Optimización de Imágenes
+
+### Formatos Recomendados
+- **WebP:** Mejor compresión, soportado por navegadores modernos
+- **JPG:** Para fotos con muchos colores
+- **PNG:** Para gráficos con transparencias
+
+### Herramientas de Optimización
+- [TinyPNG](https://tinypng.com) - Compresión JPG/PNG
+- [Squoosh](https://squoosh.app) - Conversión y optimización
+- [ImageOptim](https://imageoptim.com) - Para Mac
+
+### Tamaños Recomendados
+- **Hero:** 1920x1080px (16:9)
+- **Galería:** 800x800px (cuadradas)
+- **Perfil:** 400x600px (2:3)
+- **Historia:** 800x600px (4:3)
+
+## 🚀 Optimización de Rendimiento
+
+### Lazy Loading
+Las imágenes se cargan automáticamente cuando entran en viewport.
+
+### Bundle Splitting
+Vite divide automáticamente el código en chunks optimizados.
+
+### Compresión
+```bash
+# Para producción
+npm run build
+```
+
+## 🔧 Solución de Problemas
+
+### Contador no funciona
+```typescript
+// Verifica el formato de fecha
+date: '2024-06-15T18:00:00' // Correcto
+date: '15/06/2024'          // Incorrecto
+```
+
+### Imágenes no cargan
+- Verifica URLs públicas
+- Comprueba CORS
+- Usa HTTPS en producción
+
+### Animaciones no funcionan
+```typescript
+// Verifica configuración
+animations: {
+  enabled: true, // Debe ser true
+  // ...
+}
+```
+
+### Formulario RSVP no envía
+El formulario es estático. Para funcionalidad real, integra:
+- **EmailJS** para envío por email
+- **Google Forms** embed
+- **API backend** personalizada
+
+## 📊 Analytics (Opcional)
+
+### Google Analytics
+```html
+<!-- Agrega en index.html -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+```
+
+### Facebook Pixel
+```html
+<!-- Para tracking de eventos -->
+<script>
+  // Facebook Pixel Code
+</script>
+```
+
+## 🎯 Mejores Prácticas
+
+### SEO
+- Título descriptivo
+- Meta description
+- Open Graph tags para redes sociales
+
+### Accesibilidad
+- Texto alternativo en imágenes
+- Contraste de colores adecuado
+- Navegación por teclado
+
+### Velocidad
+- Imágenes optimizadas
+- Lazy loading activado
+- CDN para assets estáticos
+
+---
+
+¿Necesitas más personalización? Revisa los archivos fuente en `src/components/` para modificaciones avanzadas.
     name: 'Facebook',
     url: 'https://facebook.com/tu_pagina',
     icon: 'FiFacebook',

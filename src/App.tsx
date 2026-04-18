@@ -1,20 +1,18 @@
-import Header from './components/Header'
-import Hero from './components/Hero'
-import About from './components/About'
+import EventHero from './components/EventHero'
+import CoupleStory from './components/CoupleStory'
+import EventProgram from './components/EventProgram'
 import Gallery from './components/Gallery'
-import SocialLinks from './components/SocialLinks'
-import Map from './components/Map'
+import RSVP from './components/RSVP'
 import Footer from './components/Footer'
 
 function App() {
   return (
-    <div className="w-full">
-      <Header />
-      <Hero />
-      <About />
+    <div className="w-full min-h-screen">
+      <EventHero />
+      <CoupleStory />
+      <EventProgram />
       <Gallery />
-      <Map />
-      <SocialLinks />
+      <RSVP />
       <Footer />
     </div>
   )

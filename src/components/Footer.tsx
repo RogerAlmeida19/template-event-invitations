@@ -1,129 +1,150 @@
-import { businessConfig } from '../config/business'
-import { FiInstagram, FiFacebook, FiMessageCircle, FiPhone, FiMail, FiMapPin, FiExternalLink } from 'react-icons/fi'
-
-const iconMap: Record<string, React.ReactNode> = {
-  FiInstagram: <FiInstagram size={20} />,
-  FiFacebook: <FiFacebook size={20} />,
-  FiMessageCircle: <FiMessageCircle size={20} />,
-  FiLinkedin: <FiExternalLink size={20} />,
-}
+import { eventConfig } from '../config/event'
+import { FiMessageCircle, FiPhone, FiMail, FiMapPin, FiHeart } from 'react-icons/fi'
 
 export default function Footer() {
   const currentYear = new Date().getFullYear()
 
   return (
-    <footer className="bg-gradient-to-b from-gray-900 to-black text-white py-16 px-4 md:px-0">
-      <div className="container-custom">
+    <footer className="bg-gradient-to-b from-gray-900 to-black text-white py-16 px-6">
+      <div className="max-w-6xl mx-auto">
         {/* Main Footer Content */}
-        <div className="grid md:grid-cols-4 gap-8 mb-12">
-          {/* Información */}
+        <div className="grid md:grid-cols-3 gap-8 mb-12">
+          {/* Información del Evento */}
           <div>
             <div className="flex items-center gap-2 mb-4">
-              <div className="w-10 h-10 bg-gradient-to-br from-primary to-secondary rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-xl">
-                  {businessConfig.business.name.charAt(0)}
-                </span>
+              <div className="w-10 h-10 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full flex items-center justify-center">
+                <FiHeart className="text-white" size={20} />
               </div>
-              <h3 className="text-xl font-bold text-primary">
-                {businessConfig.business.name}
+              <h3
+                className="text-xl font-bold text-white"
+                style={{ fontFamily: eventConfig.fonts.heading }}
+              >
+                {eventConfig.event.couple}
               </h3>
             </div>
-            <p className="text-gray-400">
-              {businessConfig.business.tagline}
+            <p
+              className="text-gray-400 mb-4"
+              style={{ fontFamily: eventConfig.fonts.body }}
+            >
+              {eventConfig.event.description}
             </p>
-          </div>
-
-          {/* Enlaces Rápidos */}
-          <div>
-            <h4 className="font-bold mb-4 text-lg text-white">Enlaces Rápidos</h4>
-            <nav className="space-y-3 text-gray-400">
-              <div>
-                <a href="#hero" className="hover:text-primary transition">
-                  Inicio
-                </a>
+            <div className="space-y-2 text-sm text-gray-400">
+              <div className="flex items-center gap-2">
+                <FiMapPin size={16} />
+                <span>{eventConfig.event.location.name}</span>
               </div>
-              <div>
-                <a href="#about" className="hover:text-primary transition">
-                  Acerca de
-                </a>
+              <div className="flex items-center gap-2">
+                <FiPhone size={16} />
+                <span>{eventConfig.rsvp.contact.phone}</span>
               </div>
-              <div>
-                <a href="#gallery" className="hover:text-primary transition">
-                  Galería
-                </a>
-              </div>
-              <div>
-                <a href="#location" className="hover:text-primary transition">
-                  Ubicación
-                </a>
-              </div>
-            </nav>
-          </div>
-
-          {/* Contacto */}
-          <div>
-            <h4 className="font-bold mb-4 text-lg text-white">Contacto</h4>
-            <div className="space-y-3 text-gray-400">
-              <a 
-                href={`tel:${businessConfig.business.phone}`}
-                className="flex items-center gap-2 hover:text-primary transition"
-              >
-                <FiPhone size={16} /> {businessConfig.business.phone}
-              </a>
-              <a 
-                href={`mailto:${businessConfig.business.email}`}
-                className="flex items-center gap-2 hover:text-primary transition"
-              >
-                <FiMail size={16} /> {businessConfig.business.email}
-              </a>
-              <div className="flex items-center gap-2 text-gray-400">
-                <FiMapPin size={16} /> {businessConfig.business.address}
+              <div className="flex items-center gap-2">
+                <FiMail size={16} />
+                <span>{eventConfig.rsvp.contact.email}</span>
               </div>
             </div>
           </div>
 
-          {/* Redes Sociales */}
+          {/* Programa del Evento */}
           <div>
-            <h4 className="font-bold mb-4 text-lg text-white">Sígueme</h4>
-            <div className="flex gap-3">
-              {businessConfig.socialLinks.map((link) => (
-                <a
-                  key={link.name}
-                  href={link.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-gray-400 hover:text-primary hover:scale-110 transition-all duration-300 bg-gray-800 p-2 rounded-lg"
-                  title={link.name}
-                >
-                  {iconMap[link.icon] || <FiInstagram />}
-                </a>
+            <h4
+              className="font-bold mb-4 text-lg text-white"
+              style={{ fontFamily: eventConfig.fonts.heading }}
+            >
+              Programa
+            </h4>
+            <div className="space-y-3 text-gray-400">
+              {eventConfig.program.slice(0, 4).map((item, index) => (
+                <div key={index} className="flex items-center gap-3">
+                  <span className="text-purple-400 font-medium text-sm w-12">
+                    {item.time}
+                  </span>
+                  <span
+                    className="text-sm"
+                    style={{ fontFamily: eventConfig.fonts.body }}
+                  >
+                    {item.title}
+                  </span>
+                </div>
               ))}
+            </div>
+          </div>
+
+          {/* Contacto y Redes */}
+          <div>
+            <h4
+              className="font-bold mb-4 text-lg text-white"
+              style={{ fontFamily: eventConfig.fonts.heading }}
+            >
+              Conecta con Nosotros
+            </h4>
+            <div className="space-y-3">
+              <a
+                href={eventConfig.rsvp.contact.whatsapp}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-3 text-gray-400 hover:text-purple-400 transition-colors duration-200"
+              >
+                <FiMessageCircle size={18} />
+                <span
+                  style={{ fontFamily: eventConfig.fonts.body }}
+                >
+                  WhatsApp
+                </span>
+              </a>
+              <a
+                href={`mailto:${eventConfig.rsvp.contact.email}`}
+                className="flex items-center gap-3 text-gray-400 hover:text-purple-400 transition-colors duration-200"
+              >
+                <FiMail size={18} />
+                <span
+                  style={{ fontFamily: eventConfig.fonts.body }}
+                >
+                  Email
+                </span>
+              </a>
+              <a
+                href={`tel:${eventConfig.rsvp.contact.phone}`}
+                className="flex items-center gap-3 text-gray-400 hover:text-purple-400 transition-colors duration-200"
+              >
+                <FiPhone size={18} />
+                <span
+                  style={{ fontFamily: eventConfig.fonts.body }}
+                >
+                  Teléfono
+                </span>
+              </a>
+            </div>
+
+            {/* Hashtag */}
+            <div className="mt-6">
+              <p
+                className="text-purple-400 font-medium"
+                style={{ fontFamily: eventConfig.fonts.accent }}
+              >
+                {eventConfig.event.hashtag}
+              </p>
             </div>
           </div>
         </div>
 
         {/* Divider */}
-        <div className="border-t border-gray-700 my-8"></div>
-
-        {/* Bottom Footer */}
-        <div className="flex flex-col md:flex-row items-center justify-between text-gray-400 text-sm">
-          <p>&copy; {currentYear} {businessConfig.business.name}. Todos los derechos reservados.</p>
-          <div className="flex gap-6 mt-4 md:mt-0">
-            <a href="#" className="hover:text-primary transition">Política de Privacidad</a>
-            <a href="#" className="hover:text-primary transition">Términos de Servicio</a>
+        <div className="border-t border-gray-800 pt-8">
+          <div className="flex flex-col md:flex-row justify-between items-center">
+            <p
+              className="text-gray-400 text-sm mb-4 md:mb-0"
+              style={{ fontFamily: eventConfig.fonts.body }}
+            >
+              © {currentYear} {eventConfig.event.couple}. Hecho con ❤️ para celebrar el amor.
+            </p>
+            <div className="flex items-center gap-4 text-sm text-gray-400">
+              <span
+                style={{ fontFamily: eventConfig.fonts.accent }}
+              >
+                Plantilla creada con Vite + React + TypeScript
+              </span>
+            </div>
           </div>
         </div>
-
-        {/* Back to Top Button */}
-        <button
-          onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-          className="mt-8 mx-auto block text-gray-400 hover:text-primary transition"
-          title="Volver al inicio"
-        >
-          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 15l7-7 7 7" />
-          </svg>
-        </button>
       </div>
     </footer>
   )

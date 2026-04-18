@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700;800&family=Dancing+Script:wght@400;500;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -8,28 +10,156 @@ html {
 
 body {
   @apply bg-white text-gray-900;
+  font-family: 'Inter', sans-serif;
 }
 
+/* Animaciones elegantes */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slide-in-left {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slide-in-right {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scale-in {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Clases de animación */
+.animate-fade-in {
+  animation: fade-in 0.8s ease-out forwards;
+  opacity: 0;
+}
+
+.animate-slide-in-left {
+  animation: slide-in-left 0.8s ease-out forwards;
+  opacity: 0;
+}
+
+.animate-slide-in-right {
+  animation: slide-in-right 0.8s ease-out forwards;
+  opacity: 0;
+}
+
+.animate-scale-in {
+  animation: scale-in 0.6s ease-out forwards;
+  opacity: 0;
+}
+
+/* Estilos personalizados para el template de eventos */
 .container-custom {
   @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
 }
 
 .section-title {
   @apply text-4xl md:text-5xl font-bold text-center mb-4 text-gray-900;
+  font-family: 'Playfair Display', serif;
 }
 
 .section-subtitle {
   @apply text-lg text-gray-600 text-center mb-12 max-w-2xl mx-auto;
+  font-family: 'Inter', sans-serif;
 }
 
 .btn-primary {
-  @apply inline-block px-8 py-3 bg-primary text-white rounded-lg font-semibold hover:bg-orange-600 transition-colors duration-300;
+  @apply inline-block px-8 py-3 bg-purple-500 text-white rounded-full font-semibold hover:bg-purple-600 transition-all duration-300 transform hover:scale-105;
+  font-family: 'Inter', sans-serif;
 }
 
 .btn-secondary {
-  @apply inline-block px-8 py-3 bg-secondary text-white rounded-lg font-semibold hover:bg-blue-900 transition-colors duration-300;
+  @apply inline-block px-8 py-3 bg-pink-500 text-white rounded-full font-semibold hover:bg-pink-600 transition-all duration-300 transform hover:scale-105;
+  font-family: 'Inter', sans-serif;
 }
 
 .card-hover {
-  @apply transition-transform duration-300 hover:scale-105 hover:shadow-lg;
+  @apply transition-all duration-300 hover:scale-105 hover:shadow-xl;
+}
+
+/* Estilos para el contador regresivo */
+.countdown-number {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+}
+
+/* Estilos para el formulario RSVP */
+.form-input {
+  @apply w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-colors duration-200;
+  font-family: 'Inter', sans-serif;
+}
+
+.form-input:focus {
+  @apply ring-2 ring-purple-500 border-transparent;
+}
+
+/* Estilos para el timeline del programa */
+.timeline-item {
+  @apply relative mb-8;
+}
+
+.timeline-line {
+  @apply absolute left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-purple-500 to-pink-500;
+}
+
+.timeline-dot {
+  @apply absolute left-8 w-4 h-4 bg-white border-4 border-purple-500 rounded-full z-10;
+}
+
+/* Estilos para la galería */
+.gallery-item {
+  @apply relative overflow-hidden rounded-2xl shadow-lg transition-transform duration-300 hover:scale-105;
+}
+
+.gallery-overlay {
+  @apply absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 transition-opacity duration-300;
+}
+
+.gallery-item:hover .gallery-overlay {
+  @apply opacity-100;
+}
+
+/* Responsive utilities */
+@media (max-width: 768px) {
+  .section-title {
+    @apply text-3xl;
+  }
+
+  .animate-fade-in,
+  .animate-slide-in-left,
+  .animate-slide-in-right,
+  .animate-scale-in {
+    animation-duration: 0.6s;
+  }
 }
