@@ -25,6 +25,20 @@ git clone https://github.com/tu-usuario/template-event-invitations.git
 cd template-event-invitations
 ```
 
+### Opción B: Si ya tienes el código local
+Si ya tienes el código descargado, ejecuta:
+```bash
+# En Windows
+setup-github.bat
+
+# O manualmente:
+# 1. Crea el repositorio en GitHub
+# 2. Conecta con GitHub
+git remote add origin https://github.com/TU_USUARIO/template-event-invitations.git
+git branch -M main
+git push -u origin main
+```
+
 ### 2. Instala las dependencias
 ```bash
 npm install
