@@ -16,6 +16,8 @@ const EventHero: React.FC = () => {
       {/* Elementos decorativos sutiles */}
       <div className="absolute top-20 left-10 w-32 h-32 rounded-full bg-white/10 blur-xl animate-pulse" />
       <div className="absolute bottom-20 right-10 w-24 h-24 rounded-full bg-white/10 blur-xl animate-pulse delay-1000" />
+      <span className="butterfly top-16 right-16">🦋</span>
+      <span className="butterfly bottom-24 left-16 text-5xl">🦋</span>
 
       <div className="relative z-10 text-center px-6 max-w-4xl mx-auto">
         {/* Título principal con animación */}
@@ -24,12 +26,12 @@ const EventHero: React.FC = () => {
           style={{ animationDelay: '0.2s' }}
         >
           <h1
-            className="text-6xl md:text-8xl font-bold mb-4 bg-gradient-to-r from-purple-600 via-pink-500 to-purple-600 bg-clip-text text-transparent"
+            className="text-6xl md:text-8xl font-bold mb-4 bg-gradient-to-r from-emerald-700 via-lime-400 to-emerald-700 bg-clip-text text-transparent"
             style={{ fontFamily: eventConfig.fonts.heading }}
           >
             {eventConfig.event.couple}
           </h1>
-          <div className="w-24 h-1 bg-gradient-to-r from-purple-500 to-pink-500 mx-auto rounded-full" />
+          <div className="w-24 h-1 bg-gradient-to-r from-emerald-500 to-lime-300 mx-auto rounded-full" />
         </div>
 
         {/* Subtítulo */}

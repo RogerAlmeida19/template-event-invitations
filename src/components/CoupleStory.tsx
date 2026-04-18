@@ -16,7 +16,7 @@ const CoupleStory: React.FC = () => {
           >
             {eventConfig.story.title}
           </h2>
-          <div className="w-16 h-1 bg-gradient-to-r from-purple-500 to-pink-500 mx-auto rounded-full" />
+          <div className="w-16 h-1 bg-gradient-to-r from-emerald-500 to-lime-300 mx-auto rounded-full" />
         </div>
 
         <div className="grid md:grid-cols-2 gap-12 items-center">
@@ -44,7 +44,7 @@ const CoupleStory: React.FC = () => {
                   {eventConfig.couple.partner1.name}
                 </h3>
                 <p
-                  className="text-purple-600 font-medium"
+                  className="text-emerald-700 font-medium"
                   style={{ fontFamily: eventConfig.fonts.accent }}
                 >
                   {eventConfig.couple.partner1.role}
@@ -70,7 +70,7 @@ const CoupleStory: React.FC = () => {
                   {eventConfig.couple.partner2.name}
                 </h3>
                 <p
-                  className="text-purple-600 font-medium"
+                  className="text-emerald-700 font-medium"
                   style={{ fontFamily: eventConfig.fonts.accent }}
                 >
                   {eventConfig.couple.partner2.role}

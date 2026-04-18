@@ -52,7 +52,7 @@ const RSVP: React.FC = () => {
             </p>
             <button
               onClick={() => setSubmitted(false)}
-              className="bg-gradient-to-r from-purple-500 to-pink-500 text-white px-6 py-3 rounded-full font-medium hover:shadow-lg transition-shadow duration-300"
+              className="bg-gradient-to-r from-emerald-500 to-lime-300 text-white px-6 py-3 rounded-full font-medium hover:shadow-lg transition-shadow duration-300"
               style={{ fontFamily: eventConfig.fonts.body }}
             >
               Enviar otra respuesta
@@ -64,7 +64,7 @@ const RSVP: React.FC = () => {
   }
 
   return (
-    <section className="py-20 px-6 bg-gradient-to-br from-purple-50 to-pink-50">
+    <section className="py-20 px-6 bg-gradient-to-br from-green-50 to-emerald-50">
       <div className="max-w-2xl mx-auto">
         <div className="text-center mb-12">
           <h2
@@ -73,7 +73,7 @@ const RSVP: React.FC = () => {
           >
             Confirma tu Asistencia
           </h2>
-          <div className="w-16 h-1 bg-gradient-to-r from-purple-500 to-pink-500 mx-auto rounded-full mb-6" />
+          <div className="w-16 h-1 bg-gradient-to-r from-emerald-500 to-lime-300 mx-auto rounded-full mb-6" />
           <p
             className="text-lg text-gray-700 mb-4"
             style={{ fontFamily: eventConfig.fonts.body }}
@@ -88,7 +88,7 @@ const RSVP: React.FC = () => {
           </p>
         </div>
 
-        <form onSubmit={handleSubmit} className="bg-white rounded-2xl p-8 shadow-lg border border-purple-100">
+        <form onSubmit={handleSubmit} className="bg-white rounded-2xl p-8 shadow-lg border border-emerald-100">
           <div className="grid md:grid-cols-2 gap-6 mb-6">
             <div>
               <label
@@ -103,7 +103,7 @@ const RSVP: React.FC = () => {
                 required
                 value={formData.name}
                 onChange={handleChange}
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-colors duration-200"
+                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition-colors duration-200"
                 style={{ fontFamily: eventConfig.fonts.body }}
                 placeholder="Tu nombre completo"
               />
@@ -122,7 +122,7 @@ const RSVP: React.FC = () => {
                 required
                 value={formData.email}
                 onChange={handleChange}
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-colors duration-200"
+                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition-colors duration-200"
                 style={{ fontFamily: eventConfig.fonts.body }}
                 placeholder="tu@email.com"
               />
@@ -142,7 +142,7 @@ const RSVP: React.FC = () => {
                 name="phone"
                 value={formData.phone}
                 onChange={handleChange}
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-colors duration-200"
+                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition-colors duration-200"
                 style={{ fontFamily: eventConfig.fonts.body }}
                 placeholder="+1 (555) 123-4567"
               />
@@ -159,7 +159,7 @@ const RSVP: React.FC = () => {
                 name="guests"
                 value={formData.guests}
                 onChange={handleChange}
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-colors duration-200"
+                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition-colors duration-200"
                 style={{ fontFamily: eventConfig.fonts.body }}
               >
                 <option value="1">Solo yo</option>
@@ -185,7 +185,7 @@ const RSVP: React.FC = () => {
                   value="yes"
                   checked={formData.attendance === 'yes'}
                   onChange={handleChange}
-                  className="w-4 h-4 text-purple-600 focus:ring-purple-500"
+                  className="w-4 h-4 text-emerald-600 focus:ring-emerald-500"
                 />
                 <span
                   className="ml-2 text-gray-700"
@@ -201,7 +201,7 @@ const RSVP: React.FC = () => {
                   value="no"
                   checked={formData.attendance === 'no'}
                   onChange={handleChange}
-                  className="w-4 h-4 text-purple-600 focus:ring-purple-500"
+                  className="w-4 h-4 text-emerald-600 focus:ring-emerald-500"
                 />
                 <span
                   className="ml-2 text-gray-700"
@@ -225,7 +225,7 @@ const RSVP: React.FC = () => {
               name="dietary"
               value={formData.dietary}
               onChange={handleChange}
-              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-colors duration-200"
+              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition-colors duration-200"
               style={{ fontFamily: eventConfig.fonts.body }}
               placeholder="Vegetariano, alérgico a..., etc."
             />
@@ -243,7 +243,7 @@ const RSVP: React.FC = () => {
               value={formData.message}
               onChange={handleChange}
               rows={3}
-              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-colors duration-200 resize-none"
+              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition-colors duration-200 resize-none"
               style={{ fontFamily: eventConfig.fonts.body }}
               placeholder="Cualquier mensaje o felicitación..."
             />
@@ -252,7 +252,7 @@ const RSVP: React.FC = () => {
           <div className="text-center">
             <button
               type="submit"
-              className="bg-gradient-to-r from-purple-500 to-pink-500 text-white px-8 py-4 rounded-full font-semibold text-lg hover:shadow-lg transition-all duration-300 transform hover:scale-105"
+              className="bg-gradient-to-r from-emerald-500 to-lime-300 text-white px-8 py-4 rounded-full font-semibold text-lg hover:shadow-lg transition-all duration-300 transform hover:scale-105"
               style={{ fontFamily: eventConfig.fonts.body }}
             >
               Enviar Confirmación
@@ -271,13 +271,13 @@ const RSVP: React.FC = () => {
           <div className="flex justify-center space-x-4">
             <a
               href={`tel:${eventConfig.rsvp.contact.phone}`}
-              className="text-purple-600 hover:text-purple-800 transition-colors duration-200"
+              className="text-emerald-600 hover:text-emerald-800 transition-colors duration-200"
             >
               📞 {eventConfig.rsvp.contact.phone}
             </a>
             <a
               href={`mailto:${eventConfig.rsvp.contact.email}`}
-              className="text-purple-600 hover:text-purple-800 transition-colors duration-200"
+              className="text-emerald-600 hover:text-emerald-800 transition-colors duration-200"
             >
               ✉️ {eventConfig.rsvp.contact.email}
             </a>
@@ -285,7 +285,7 @@ const RSVP: React.FC = () => {
               href={eventConfig.rsvp.contact.whatsapp}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-purple-600 hover:text-purple-800 transition-colors duration-200"
+              className="text-emerald-600 hover:text-emerald-800 transition-colors duration-200"
             >
               💬 WhatsApp
             </a>

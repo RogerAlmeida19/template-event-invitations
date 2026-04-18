@@ -62,7 +62,7 @@ const Countdown: React.FC = () => {
         Faltan
       </h3>
       <div className="grid grid-cols-4 gap-4 text-center">
-        <div className="bg-gradient-to-br from-purple-500 to-pink-500 rounded-xl p-4 text-white">
+        <div className="bg-gradient-to-br from-emerald-500 to-lime-300 rounded-xl p-4 text-white">
           <div className="text-3xl font-bold" style={{ fontFamily: eventConfig.fonts.heading }}>
             {timeLeft.days}
           </div>
@@ -70,7 +70,7 @@ const Countdown: React.FC = () => {
             Días
           </div>
         </div>
-        <div className="bg-gradient-to-br from-purple-500 to-pink-500 rounded-xl p-4 text-white">
+        <div className="bg-gradient-to-br from-emerald-500 to-lime-300 rounded-xl p-4 text-white">
           <div className="text-3xl font-bold" style={{ fontFamily: eventConfig.fonts.heading }}>
             {timeLeft.hours}
           </div>
@@ -78,7 +78,7 @@ const Countdown: React.FC = () => {
             Horas
           </div>
         </div>
-        <div className="bg-gradient-to-br from-purple-500 to-pink-500 rounded-xl p-4 text-white">
+        <div className="bg-gradient-to-br from-emerald-500 to-lime-300 rounded-xl p-4 text-white">
           <div className="text-3xl font-bold" style={{ fontFamily: eventConfig.fonts.heading }}>
             {timeLeft.minutes}
           </div>
@@ -86,7 +86,7 @@ const Countdown: React.FC = () => {
             Min
           </div>
         </div>
-        <div className="bg-gradient-to-br from-purple-500 to-pink-500 rounded-xl p-4 text-white">
+        <div className="bg-gradient-to-br from-emerald-500 to-lime-300 rounded-xl p-4 text-white">
           <div className="text-3xl font-bold" style={{ fontFamily: eventConfig.fonts.heading }}>
             {timeLeft.seconds}
           </div>

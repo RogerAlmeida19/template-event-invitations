@@ -2,19 +2,19 @@
 export const eventConfig = {
   // Información básica del evento
   event: {
-    type: 'wedding', // 'wedding', 'quince', 'birthday', 'anniversary', etc.
-    title: 'Nuestra Boda',
-    subtitle: 'Con amor y alegría celebramos este día especial',
-    couple: 'María & Carlos',
-    date: '2024-06-15T18:00:00', // ISO format - IMPORTANTE: Actualiza esta fecha
+    type: 'quince', // 'wedding', 'quince', 'birthday', 'anniversary', etc.
+    title: 'Mis XV Años',
+    subtitle: 'Una celebración mágica llena de mariposas y sueños',
+    couple: 'Ana Sofía',
+    date: '2025-09-21T19:00:00', // ISO format - IMPORTANTE: Actualiza esta fecha
     location: {
-      name: 'Salón de Eventos Elegante',
-      address: 'Av. Principal 123, Ciudad, País',
-      ceremony: 'Iglesia San José, Calle Iglesia 456'
+      name: 'Salón Mariposas de Cristal',
+      address: 'Av. del Bosque 123, Ciudad, País',
+      ceremony: 'Jardín de las Mariposas, Calle Aurora 45'
     },
-    dressCode: 'Formal elegante',
-    hashtag: '#NuestraBoda2024',
-    description: 'Con gran alegría les invitamos a celebrar el día más importante de nuestras vidas. Un día lleno de amor, risas y momentos inolvidables.'
+    dressCode: 'Verde pistacho elegante',
+    hashtag: '#AnaSofiaXV',
+    description: 'Con gran ilusión te invito a celebrar mis XV años, una noche de mariposas, música y magia bajo un cielo de estrellas. ¡Ven a compartir este momento especial conmigo!'
   },
 
   // Información de los protagonistas (para bodas, XV años, etc.)
@@ -139,14 +139,14 @@ export const eventConfig = {
     ]
   },
 
-  // Colores del tema (elegante y minimalista)
+  // Colores del tema (verde pistacho y mariposas)
   theme: {
-    primary: '#8B5CF6',    // Púrpura elegante
-    secondary: '#F59E0B',  // Dorado
-    accent: '#EC4899',     // Rosa suave
-    background: '#FAFAFA', // Blanco suave
-    text: '#1F2937',      // Gris oscuro
-    muted: '#6B7280'       // Gris medio
+    primary: '#8BC19F',    // Verde pistacho
+    secondary: '#E9D4A6',  // Amarillo suave
+    accent: '#F8B7D6',     // Rosa mariposa
+    background: '#F7FBF5', // Blanco verdoso suave
+    text: '#1F3B2D',      // Verde oscuro
+    muted: '#6B7B65'       // Verde grisáceo
   },
 
   // Configuración de animaciones (simples y elegantes)
