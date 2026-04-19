@@ -57,12 +57,24 @@ const Countdown: React.FC = () => {
   }
 
   return (
-    <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-8 shadow-lg border border-gray-100">
+    <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-8 shadow-lg border border-gray-100 relative overflow-visible">
+      {/* Partículas de hada animadas */}
+
       <h3 className="text-2xl font-bold text-center mb-6 text-gray-800" style={{ fontFamily: eventConfig.fonts.heading }}>
         Faltan
       </h3>
       <div className="grid grid-cols-4 gap-4 text-center">
-        <div className="bg-gradient-to-br from-emerald-500 to-lime-300 rounded-xl p-4 text-white">
+        <div className="bg-gradient-to-br from-emerald-500 to-lime-300 rounded-xl p-4 text-white relative overflow-visible">
+          {/* Partícula dorada */}
+          <span className="absolute -top-3 -left-3 animate-fairy-float-fast pointer-events-none" style={{ zIndex: 2 }}>
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+              <circle cx="9" cy="9" r="3" fill="#FFD700" opacity="0.85" />
+              <ellipse cx="9" cy="7" rx="1" ry="0.3" fill="#FFF8DC" opacity="0.7" />
+              <ellipse cx="7" cy="12" rx="0.5" ry="0.2" fill="#FFD700" opacity="0.7" />
+              <ellipse cx="11" cy="12" rx="0.5" ry="0.2" fill="#FFD700" opacity="0.7" />
+              <circle cx="9" cy="9" r="0.5" fill="#FFF8DC" />
+            </svg>
+          </span>
           <div className="text-3xl font-bold" style={{ fontFamily: eventConfig.fonts.heading }}>
             {timeLeft.days}
           </div>
@@ -70,7 +82,16 @@ const Countdown: React.FC = () => {
             Días
           </div>
         </div>
-        <div className="bg-gradient-to-br from-emerald-500 to-lime-300 rounded-xl p-4 text-white">
+        <div className="bg-gradient-to-br from-emerald-500 to-lime-300 rounded-xl p-4 text-white relative overflow-visible">
+          <span className="absolute -top-3 right-2 animate-fairy-float pointer-events-none" style={{ zIndex: 2 }}>
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+              <circle cx="8" cy="8" r="2.5" fill="#FFD700" opacity="0.85" />
+              <ellipse cx="8" cy="6.5" rx="0.8" ry="0.3" fill="#FFF8DC" opacity="0.7" />
+              <ellipse cx="6.5" cy="11" rx="0.4" ry="0.15" fill="#FFD700" opacity="0.7" />
+              <ellipse cx="10" cy="11" rx="0.4" ry="0.15" fill="#FFD700" opacity="0.7" />
+              <circle cx="8" cy="8" r="0.4" fill="#FFF8DC" />
+            </svg>
+          </span>
           <div className="text-3xl font-bold" style={{ fontFamily: eventConfig.fonts.heading }}>
             {timeLeft.hours}
           </div>
@@ -78,7 +99,16 @@ const Countdown: React.FC = () => {
             Horas
           </div>
         </div>
-        <div className="bg-gradient-to-br from-emerald-500 to-lime-300 rounded-xl p-4 text-white">
+        <div className="bg-gradient-to-br from-emerald-500 to-lime-300 rounded-xl p-4 text-white relative overflow-visible">
+          <span className="absolute bottom-2 left-1 animate-fairy-float-slow pointer-events-none" style={{ zIndex: 2 }}>
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+              <circle cx="7" cy="7" r="2" fill="#FFD700" opacity="0.85" />
+              <ellipse cx="7" cy="5.5" rx="0.6" ry="0.2" fill="#FFF8DC" opacity="0.7" />
+              <ellipse cx="5.5" cy="10" rx="0.3" ry="0.1" fill="#FFD700" opacity="0.7" />
+              <ellipse cx="9" cy="10" rx="0.3" ry="0.1" fill="#FFD700" opacity="0.7" />
+              <circle cx="7" cy="7" r="0.3" fill="#FFF8DC" />
+            </svg>
+          </span>
           <div className="text-3xl font-bold" style={{ fontFamily: eventConfig.fonts.heading }}>
             {timeLeft.minutes}
           </div>
@@ -86,7 +116,16 @@ const Countdown: React.FC = () => {
             Min
           </div>
         </div>
-        <div className="bg-gradient-to-br from-emerald-500 to-lime-300 rounded-xl p-4 text-white">
+        <div className="bg-gradient-to-br from-emerald-500 to-lime-300 rounded-xl p-4 text-white relative overflow-visible">
+          <span className="absolute -right-3 top-1/2 animate-fairy-float pointer-events-none" style={{ zIndex: 2 }}>
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+              <circle cx="6" cy="6" r="1.5" fill="#FFD700" opacity="0.85" />
+              <ellipse cx="6" cy="4.5" rx="0.5" ry="0.15" fill="#FFF8DC" opacity="0.7" />
+              <ellipse cx="4.5" cy="9" rx="0.2" ry="0.07" fill="#FFD700" opacity="0.7" />
+              <ellipse cx="7.5" cy="9" rx="0.2" ry="0.07" fill="#FFD700" opacity="0.7" />
+              <circle cx="6" cy="6" r="0.2" fill="#FFF8DC" />
+            </svg>
+          </span>
           <div className="text-3xl font-bold" style={{ fontFamily: eventConfig.fonts.heading }}>
             {timeLeft.seconds}
           </div>
@@ -95,14 +134,7 @@ const Countdown: React.FC = () => {
           </div>
         </div>
       </div>
-      <p className="text-center mt-6 text-gray-600 text-sm" style={{ fontFamily: eventConfig.fonts.body }}>
-        Hasta el {new Date(eventConfig.event.date).toLocaleDateString('es-ES', {
-          weekday: 'long',
-          year: 'numeric',
-          month: 'long',
-          day: 'numeric'
-        })}
-      </p>
+      {/* Fecha eliminada, solo contador */}
     </div>
   );
 };

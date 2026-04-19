@@ -19,7 +19,7 @@ Tu template one-page profesional está completamente listo. Este es un sitio web
 
 ## 🚀 Características Profesionales
 
-- ⚡ **Rendimiento Optimizado** - Construido con Vite
+ 
 - 📱 **100% Responsivo** - Se adapta a cualquier dispositivo
 - 🎯 **SEO Listo** - Estructura semántica correcta
 - 🎨 **Tailwind CSS** - Diseño moderno y personalizable
@@ -67,9 +67,7 @@ Genera la carpeta `dist/` lista para producción.
 
 ## 📦 Dependencias Instaladas
 
-- **Vite** - Build tool
-- **React 18** - UI framework
-- **TypeScript** - Type safety
+ 
 - **Tailwind CSS** - Styling
 - **React Icons** - Iconografía
 - **React Leaflet** - Mapas interactivos

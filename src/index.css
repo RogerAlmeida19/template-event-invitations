@@ -1,4 +1,21 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Satisfy&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Tangerine:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Allura&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Parisienne&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Allura&family=Herr+Von+Muellerhoff&family=Tangerine:wght@400;700&family=Parisienne&family=Satisfy&family=Sacramento&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700;800&family=Cormorant+Garamond:wght@400;500;600;700&family=Libre+Baskerville:wght@400;700&family=Lora:wght@400;700&family=Prata&family=Cinzel:wght@400;700&family=Marcellus&family=Alice&family=Sorts+Mill+Goudy&family=Quicksand:wght@400;700&family=Cardo:wght@400;700&display=swap');
+
+.font-satisfy { font-family: 'Satisfy', cursive; }
+.font-tangerine { font-family: 'Tangerine', cursive; }
+.font-allura { font-family: 'Allura', cursive; }
+.font-parisienne { font-family: 'Parisienne', cursive; }
+.font-greatvibes { font-family: 'Great Vibes', cursive; }
+.sparkle-12 { top: 10%; left: 80%; animation-delay: 0.7s; }
+.sparkle-13 { top: 65%; left: 25%; animation-delay: 1.5s; }
+.sparkle-14 { top: 78%; left: 10%; animation-delay: 0.2s; }
+.sparkle-15 { top: 55%; left: 60%; animation-delay: 1.8s; }
 
 .font-dancing { font-family: 'Dancing Script', cursive; }
 .font-allura { font-family: 'Allura', cursive; }
@@ -48,7 +65,6 @@
 .sparkle-9 { top: 68%; left: 50%; animation-delay: 1.9s; }
 .sparkle-10 { top: 30%; left: 10%; animation-delay: 0.6s; }
 .sparkle-11 { top: 85%; left: 75%; animation-delay: 1.3s; }
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700;800&family=Cormorant+Garamond:wght@400;500;600;700&family=Libre+Baskerville:wght@400;700&family=Lora:wght@400;700&family=Prata&family=Cinzel:wght@400;700&family=Marcellus&family=Alice&family=Sorts+Mill+Goudy&family=Quicksand:wght@400;700&family=Cardo:wght@400;700&display=swap');
 .font-cormorant { font-family: 'Cormorant Garamond', serif; }
 .font-librebaskerville { font-family: 'Libre Baskerville', serif; }
 .font-lora { font-family: 'Lora', serif; }
@@ -80,9 +96,7 @@ body {
 }
 
 
-.font-dancing, .fairytale-font, h1, h2 {
-  font-family: 'Dancing Script', cursive !important;
-}
+
 
 .fairytale-font {
   font-family: 'Great Vibes', 'Dancing Script', 'Playfair Display', cursive;

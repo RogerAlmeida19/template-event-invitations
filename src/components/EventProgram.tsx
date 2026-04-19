@@ -12,6 +12,7 @@ const EventProgram: React.FC = () => {
         <div className="text-center mb-8">
           <h2
             className="text-2xl md:text-4xl font-bold text-gray-800 mb-2"
+            style={{ fontFamily: eventConfig.fonts.heading }}
           >
             Programa del Evento
           </h2>
@@ -30,7 +31,7 @@ const EventProgram: React.FC = () => {
                 style={{ animationDelay: `${0.2 * index}s` }}
               >
                 {/* Punto del timeline */}
-                <div className="absolute left-4 md:left-1/2 w-3 h-3 bg-white border-2 border-emerald-500 rounded-full transform md:-translate-x-2 z-10" />
+                <div className="absolute left-4 md:left-1/2 top-10 md:top-1/2 -translate-y-0 md:-translate-y-1/2 w-3 h-3 bg-white border-2 border-emerald-500 rounded-full transform md:-translate-x-1/2 z-10" />
 
                 {/* Contenido */}
                 <div className={`ml-10 md:ml-0 md:w-1/2 w-full`}> 
@@ -40,26 +41,29 @@ const EventProgram: React.FC = () => {
                       <div className="flex-1">
                         <div className="flex items-center space-x-2 mb-1">
                           <span
-                            className="text-lg font-bold text-emerald-700"
+                            className="text-lg text-emerald-700 font-dancing"
+                            style={{ fontFamily: eventConfig.fonts.accent, fontWeight: 400 }}
                           >
                             {item.time}
                           </span>
                           <h3
                             className="text-base font-semibold text-gray-800"
+                            style={{ fontFamily: eventConfig.fonts.body }}
                           >
                             {item.title}
                           </h3>
                         </div>
                         <p
                           className="text-gray-700 mb-1 text-sm"
+                          style={{ fontFamily: eventConfig.fonts.body }}
                         >
                           {item.description}
                         </p>
                         <p
                           className="text-xs text-emerald-700 font-medium"
-                          style={{ fontFamily: eventConfig.fonts.accent }}
+                          style={{ fontFamily: eventConfig.fonts.body }}
                         >
-                          📍 {item.location}
+                          {item.location}
                         </p>
                       </div>
                     </div>
