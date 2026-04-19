@@ -1,6 +1,6 @@
 # Template de Invitaciones de Eventos
 
-Un template elegante y personalizable para invitaciones de eventos (bodas, XV años, cumpleaños, aniversarios) construido con Vite + React + TypeScript.
+
 
 ## ✨ Características
 

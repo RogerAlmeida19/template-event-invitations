@@ -19,7 +19,7 @@ export default function Gallery() {
           >
             Nuestra Galería
           </h2>
-          <div className="w-16 h-1 bg-gradient-to-r from-purple-500 to-pink-500 mx-auto rounded-full" />
+          <div className="w-16 h-1 bg-gradient-to-r from-emerald-500 to-lime-300 mx-auto rounded-full" />
         </div>
 
         {/* Galería Grid */}

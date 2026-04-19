@@ -2,77 +2,47 @@
 export const eventConfig = {
   // Información básica del evento
   event: {
-    type: 'wedding', // 'wedding', 'quince', 'birthday', 'anniversary', etc.
-    title: 'Nuestra Boda',
-    subtitle: 'Con amor y alegría celebramos este día especial',
-    couple: 'María & Carlos',
-    date: '2024-06-15T18:00:00', // ISO format - IMPORTANTE: Actualiza esta fecha
+    type: 'quince', // 'wedding', 'quince', 'birthday', 'anniversary', etc.
+    title: 'Mis XV Años',
+    subtitle: 'Una celebración mágica llena de hadas y sueños',
+    couple: 'Sol Valentina',
+    date: '2026-07-05T22:00:00', // ISO format - IMPORTANTE: Actualiza esta fecha
     location: {
-      name: 'Salón de Eventos Elegante',
-      address: 'Av. Principal 123, Ciudad, País',
-      ceremony: 'Iglesia San José, Calle Iglesia 456'
+      name: 'Salón Clahe Eventos',
+      address: 'Dirección a definir',
+      ceremony: 'Salón Clahe Eventos'
     },
-    dressCode: 'Formal elegante',
-    hashtag: '#NuestraBoda2024',
-    description: 'Con gran alegría les invitamos a celebrar el día más importante de nuestras vidas. Un día lleno de amor, risas y momentos inolvidables.'
+    dressCode: 'Elegante sport',
+    hashtag: '#SolValentinaXV',
+    description: 'Con gran ilusión te invito a celebrar mis XV años, una noche de hadas, música y magia en un bosque encantado. ¡Ven a compartir este momento especial conmigo!'
   },
 
   // Información de los protagonistas (para bodas, XV años, etc.)
-  couple: {
-    partner1: {
-      name: 'María García',
-      role: 'Novia',
-      image: 'https://images.unsplash.com/photo-1494790108755-2616b612b786?w=300&h=400&fit=crop',
-      description: 'Arquitecta apasionada por el diseño'
-    },
-    partner2: {
-      name: 'Carlos Rodríguez',
-      role: 'Novio',
-      image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=400&fit=crop',
-      description: 'Ingeniero con corazón de artista'
-    }
-  },
+  couple: {},
 
   // Historia de amor (opcional - se puede ocultar)
   story: {
     enabled: true,
-    title: 'Nuestra Historia',
-    content: 'Nos conocimos hace 5 años en una cafetería del centro. Desde ese momento supimos que queríamos compartir nuestras vidas juntos. Hoy, con el corazón lleno de gratitud, celebramos el amor que nos une.',
-    images: [
-      'https://images.unsplash.com/photo-1519741497674-611481863552?w=400&h=300&fit=crop',
-      'https://images.unsplash.com/photo-1511285560929-80b456fea0bc?w=400&h=300&fit=crop'
-    ]
+    title: 'Mi Historia',
+    content: 'Desde pequeña soñé con este día tan especial. Han sido años de aprendizajes, aventuras y sueños compartidos con mi familia y amigos. Hoy, al cumplir mis XV años, celebro no solo el paso del tiempo, sino la magia de crecer rodeada de amor, alegría y esperanza. ¡Gracias por ser parte de este momento inolvidable en mi vida!',
+    image: '/src/assets/bg/jcoope12-ai-generated-8367677_1920.jpg'
   },
 
   // Programa del evento
   program: [
     {
-      time: '17:00',
-      title: 'Ceremonia Religiosa',
-      description: 'Intercambio de votos y anillos',
-      icon: '💍',
-      location: 'Iglesia San José'
+      time: '22:00',
+      title: 'Recepción y Bienvenida',
+      description: '¡Comienza la noche mágica! Recepción de invitados y bienvenida.',
+      icon: '✨',
+      location: 'Salón Clahe Eventos'
     },
     {
-      time: '18:30',
-      title: 'Cóctel de Bienvenida',
-      description: 'Bebidas y canapés',
-      icon: '🍸',
-      location: 'Jardín del salón'
-    },
-    {
-      time: '19:30',
-      title: 'Cena de Gala',
-      description: 'Banquete principal',
-      icon: '🍽️',
-      location: 'Salón principal'
-    },
-    {
-      time: '21:30',
-      title: 'Fiesta y Baile',
-      description: 'Música, baile y celebración',
-      icon: '🎉',
-      location: 'Pista de baile'
+      time: '05:00',
+      title: 'Fin de la Fiesta',
+      description: '¡Gracias por acompañarme hasta el amanecer!',
+      icon: '🌅',
+      location: 'Salón Clahe Eventos'
     }
   ],
 
@@ -139,14 +109,14 @@ export const eventConfig = {
     ]
   },
 
-  // Colores del tema (elegante y minimalista)
+  // Colores del tema (verde pistacho y magia de hadas)
   theme: {
-    primary: '#8B5CF6',    // Púrpura elegante
-    secondary: '#F59E0B',  // Dorado
-    accent: '#EC4899',     // Rosa suave
-    background: '#FAFAFA', // Blanco suave
-    text: '#1F2937',      // Gris oscuro
-    muted: '#6B7280'       // Gris medio
+    primary: '#8BC19F',    // Verde pistacho
+    secondary: '#E9D4A6',  // Amarillo suave
+    accent: '#F8B7D6',     // Rosa mágico
+    background: '#F7FBF5', // Blanco verdoso suave
+    text: '#1F3B2D',      // Verde oscuro
+    muted: '#6B7B65'       // Verde grisáceo
   },
 
   // Configuración de animaciones (simples y elegantes)
@@ -159,7 +129,7 @@ export const eventConfig = {
 
   // Configuración de fuentes (elegantes)
   fonts: {
-    heading: 'Playfair Display, serif',
+    heading: 'Dancing Script, cursive',
     body: 'Inter, sans-serif',
     accent: 'Dancing Script, cursive'
   },

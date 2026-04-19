@@ -11,12 +11,11 @@ const CoupleStory: React.FC = () => {
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
           <h2
-            className="text-4xl md:text-5xl font-bold text-gray-800 mb-4"
-            style={{ fontFamily: eventConfig.fonts.heading }}
+            className="text-4xl md:text-5xl font-bold text-gray-800 mb-4 font-dancing"
           >
             {eventConfig.story.title}
           </h2>
-          <div className="w-16 h-1 bg-gradient-to-r from-purple-500 to-pink-500 mx-auto rounded-full" />
+          <div className="w-16 h-1 bg-gradient-to-r from-emerald-500 to-lime-300 mx-auto rounded-full" />
         </div>
 
         <div className="grid md:grid-cols-2 gap-12 items-center">
@@ -29,78 +28,20 @@ const CoupleStory: React.FC = () => {
               {eventConfig.story.content}
             </p>
 
-            {/* Información de la pareja */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
-              <div className="text-center">
-                <img
-                  src={eventConfig.couple.partner1.image}
-                  alt={eventConfig.couple.partner1.name}
-                  className="w-32 h-32 rounded-full mx-auto mb-4 object-cover shadow-lg border-4 border-white"
-                />
-                <h3
-                  className="text-xl font-semibold text-gray-800 mb-1"
-                  style={{ fontFamily: eventConfig.fonts.heading }}
-                >
-                  {eventConfig.couple.partner1.name}
-                </h3>
-                <p
-                  className="text-purple-600 font-medium"
-                  style={{ fontFamily: eventConfig.fonts.accent }}
-                >
-                  {eventConfig.couple.partner1.role}
-                </p>
-                <p
-                  className="text-sm text-gray-600 mt-2"
-                  style={{ fontFamily: eventConfig.fonts.body }}
-                >
-                  {eventConfig.couple.partner1.description}
-                </p>
-              </div>
-
-              <div className="text-center">
-                <img
-                  src={eventConfig.couple.partner2.image}
-                  alt={eventConfig.couple.partner2.name}
-                  className="w-32 h-32 rounded-full mx-auto mb-4 object-cover shadow-lg border-4 border-white"
-                />
-                <h3
-                  className="text-xl font-semibold text-gray-800 mb-1"
-                  style={{ fontFamily: eventConfig.fonts.heading }}
-                >
-                  {eventConfig.couple.partner2.name}
-                </h3>
-                <p
-                  className="text-purple-600 font-medium"
-                  style={{ fontFamily: eventConfig.fonts.accent }}
-                >
-                  {eventConfig.couple.partner2.role}
-                </p>
-                <p
-                  className="text-sm text-gray-600 mt-2"
-                  style={{ fontFamily: eventConfig.fonts.body }}
-                >
-                  {eventConfig.couple.partner2.description}
-                </p>
-              </div>
-            </div>
+            {/* Información de la pareja eliminada para XV años */}
           </div>
 
-          {/* Galería de fotos de la historia */}
-          <div className={`grid grid-cols-2 gap-4 ${eventConfig.animations.enabled ? 'animate-fade-in' : ''}`}>
-            {eventConfig.story.images.map((image, index) => (
-              <div
-                key={index}
-                className="relative group overflow-hidden rounded-2xl shadow-lg"
-                style={{ animationDelay: `${0.2 * index}s` }}
-              >
-                <img
-                  src={image}
-                  alt={`Historia ${index + 1}`}
-                  className="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-110"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-              </div>
-            ))}
+          {/* Foto única de la historia */}
+          <div className={`flex justify-center ${eventConfig.animations.enabled ? 'animate-fade-in' : ''}`}>
+            <div className="relative group overflow-hidden rounded-2xl shadow-lg max-w-md w-full">
+              <img
+                src={eventConfig.story.image}
+                alt="Foto de la historia"
+                className="w-full h-72 object-cover transition-transform duration-300 group-hover:scale-105"
+                style={{ objectPosition: 'center 30%' }}
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+            </div>
           </div>
         </div>
       </div>

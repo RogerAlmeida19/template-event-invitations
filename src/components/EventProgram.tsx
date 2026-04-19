@@ -7,65 +7,63 @@ const EventProgram: React.FC = () => {
   }
 
   return (
-    <section className="py-20 px-6 bg-white">
-      <div className="max-w-4xl mx-auto">
-        <div className="text-center mb-16">
+    <section className="py-8 px-2 sm:px-6 bg-white">
+      <div className="max-w-2xl mx-auto">
+        <div className="text-center mb-8">
           <h2
-            className="text-4xl md:text-5xl font-bold text-gray-800 mb-4"
+            className="text-2xl md:text-4xl font-bold text-gray-800 mb-2"
             style={{ fontFamily: eventConfig.fonts.heading }}
           >
             Programa del Evento
           </h2>
-          <div className="w-16 h-1 bg-gradient-to-r from-purple-500 to-pink-500 mx-auto rounded-full" />
+          <div className="w-12 h-1 bg-gradient-to-r from-emerald-500 to-lime-300 mx-auto rounded-full" />
         </div>
 
         <div className="relative">
           {/* Línea vertical del timeline */}
-          <div className="absolute left-8 md:left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-purple-500 to-pink-500 transform md:-translate-x-0.5" />
+          <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-emerald-500 to-lime-300 transform md:-translate-x-0.5" />
 
-          <div className="space-y-8">
+          <div className="space-y-4">
             {eventConfig.program.map((item, index) => (
               <div
                 key={index}
-                className={`relative flex items-center ${
-                  index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'
-                } ${eventConfig.animations.enabled ? 'animate-fade-in' : ''}`}
+                className={`relative flex flex-col md:flex-row items-center ${eventConfig.animations.enabled ? 'animate-fade-in' : ''}`}
                 style={{ animationDelay: `${0.2 * index}s` }}
               >
                 {/* Punto del timeline */}
-                <div className="absolute left-8 md:left-1/2 w-4 h-4 bg-white border-4 border-purple-500 rounded-full transform md:-translate-x-2 z-10" />
+                <div className="absolute left-4 md:left-1/2 top-10 md:top-1/2 -translate-y-0 md:-translate-y-1/2 w-3 h-3 bg-white border-2 border-emerald-500 rounded-full transform md:-translate-x-1/2 z-10" />
 
                 {/* Contenido */}
-                <div className={`ml-16 md:ml-0 md:w-1/2 ${index % 2 === 0 ? 'md:pr-12' : 'md:pl-12'}`}>
-                  <div className="bg-gradient-to-br from-white to-gray-50 rounded-2xl p-6 shadow-lg border border-gray-100 hover:shadow-xl transition-shadow duration-300">
-                    <div className="flex items-start space-x-4">
-                      <div className="text-3xl">{item.icon}</div>
+                <div className={`ml-10 md:ml-0 md:w-1/2 w-full`}> 
+                  <div className="bg-gradient-to-br from-white to-gray-50 rounded-xl p-3 shadow border border-gray-100">
+                    <div className="flex items-start space-x-2">
+                      <div className="text-2xl">{item.icon}</div>
                       <div className="flex-1">
-                        <div className="flex items-center space-x-3 mb-2">
+                        <div className="flex items-center space-x-2 mb-1">
                           <span
-                            className="text-2xl font-bold text-purple-600"
-                            style={{ fontFamily: eventConfig.fonts.heading }}
+                            className="text-lg text-emerald-700 font-dancing"
+                            style={{ fontFamily: eventConfig.fonts.accent, fontWeight: 400 }}
                           >
                             {item.time}
                           </span>
                           <h3
-                            className="text-xl font-semibold text-gray-800"
-                            style={{ fontFamily: eventConfig.fonts.heading }}
+                            className="text-base font-semibold text-gray-800"
+                            style={{ fontFamily: eventConfig.fonts.body }}
                           >
                             {item.title}
                           </h3>
                         </div>
                         <p
-                          className="text-gray-700 mb-2"
+                          className="text-gray-700 mb-1 text-sm"
                           style={{ fontFamily: eventConfig.fonts.body }}
                         >
                           {item.description}
                         </p>
                         <p
-                          className="text-sm text-purple-600 font-medium"
-                          style={{ fontFamily: eventConfig.fonts.accent }}
+                          className="text-xs text-emerald-700 font-medium"
+                          style={{ fontFamily: eventConfig.fonts.body }}
                         >
-                          📍 {item.location}
+                          {item.location}
                         </p>
                       </div>
                     </div>
@@ -77,16 +75,16 @@ const EventProgram: React.FC = () => {
         </div>
 
         {/* Información adicional */}
-        <div className="mt-16 text-center">
-          <div className="bg-gradient-to-r from-purple-50 to-pink-50 rounded-2xl p-8 border border-purple-100">
+        <div className="mt-8 text-center">
+          <div className="bg-gradient-to-r from-emerald-50 to-lime-100 rounded-xl p-4 border border-emerald-100">
             <h3
-              className="text-2xl font-bold text-gray-800 mb-4"
+              className="text-lg font-bold text-gray-800 mb-2"
               style={{ fontFamily: eventConfig.fonts.heading }}
             >
               Código de Vestimenta
             </h3>
             <p
-              className="text-lg text-gray-700"
+              className="text-base text-gray-700"
               style={{ fontFamily: eventConfig.fonts.body }}
             >
               {eventConfig.event.dressCode}
