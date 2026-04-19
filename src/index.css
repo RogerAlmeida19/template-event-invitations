@@ -89,7 +89,7 @@ html {
 body {
   @apply bg-white text-gray-900 overflow-x-hidden text-lg md:text-xl;
   font-family: 'Playfair Display', serif;
-  background-image: url('./assets/bg/bosque-magico-1.jpg');
+  background-image: url('/assets/bg/bosque-magico-1.jpg');
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
