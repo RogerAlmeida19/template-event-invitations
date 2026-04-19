@@ -31,15 +31,17 @@ export default function Footer() {
             <div className="space-y-2 text-sm text-gray-400">
               <div className="flex items-center gap-2">
                 <FiMapPin size={16} />
-                <span>{eventConfig.event.location.name}</span>
+                <span>{eventConfig.event.location.address}</span>
               </div>
               <div className="flex items-center gap-2">
-                <FiPhone size={16} />
-                <span>{eventConfig.rsvp.contact.phone}</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <FiMail size={16} />
-                <span>{eventConfig.rsvp.contact.email}</span>
+                <a
+                  href={eventConfig.event.location.maps}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="underline hover:text-emerald-300 transition-colors"
+                >
+                  Ver en Google Maps
+                </a>
               </div>
             </div>
           </div>
