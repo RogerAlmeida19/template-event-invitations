@@ -141,8 +141,8 @@ const EventHero: React.FC = () => {
           style={{ animationDelay: "0.2s" }}
         >
           <h1
-            className="font-dancing italic text-6xl md:text-8xl font-bold mb-6 bg-gradient-to-r from-[#AEE9D1] via-[#C3B1E1] to-[#B39DDB] bg-clip-text text-transparent whitespace-nowrap"
-            style={{ textShadow: "0 6px 32px rgba(0,0,0,0.35), 0 2px 0 #fff" }}
+            className="font-dancing italic text-6xl md:text-8xl font-bold mb-6 text-white whitespace-nowrap"
+            style={{ textShadow: "0 1px 1.5px #AEEA00, 0 1px 0 #B2FF59" }}
           >
             Sol Valentina
           </h1>
@@ -173,7 +173,7 @@ const EventHero: React.FC = () => {
           className={`mb-12 ${eventConfig.animations.enabled ? "animate-fade-in" : ""}`}
           style={{ animationDelay: "0.6s" }}
         >
-          <div className="bg-white/70 backdrop-blur-sm rounded-2xl p-6 shadow-lg border border-white/20 max-w-md mx-auto">
+          <div className="bg-gradient-to-br from-[#F6FFF0] via-[#E9FCD4] to-[#D0F8CE] backdrop-blur-sm rounded-2xl p-6 shadow-lg border border-[#E9FCD4] max-w-md mx-auto">
             <div className="space-y-3 text-gray-700">
               <div className="flex items-center justify-center space-x-2">
                 <span className="text-2xl">📅</span>
@@ -227,7 +227,7 @@ const EventHero: React.FC = () => {
           style={{ animationDelay: "1s" }}
         >
           <p
-            className="text-lg text-gray-600"
+            className="text-base md:text-xl font-semibold text-gray-800 drop-shadow tracking-wide select-all"
             style={{ fontFamily: eventConfig.fonts.accent }}
           >
             {eventConfig.event.hashtag}
