@@ -1,4 +1,5 @@
 import React from "react";
+import bosqueFondo from '../assets/bg/juliush-fairytale-forest-7759927_1920.jpg';
 import { eventConfig } from "../config/event";
 import Countdown from "./Countdown";
 
@@ -10,7 +11,7 @@ const EventHero: React.FC = () => {
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat scale-105 blur-md"
           style={{
-            backgroundImage: "url('/assets/bg/juliush-fairytale-forest-7759927_1920.jpg')",
+            backgroundImage: `url(${bosqueFondo})`,
             opacity: 0.85,
             filter: 'blur(8px)'
           }}
