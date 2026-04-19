@@ -1,6 +1,5 @@
 
-
-import React, { useState, Suspense, lazy } from 'react';
+import { useState, Suspense, lazy } from 'react';
 const EventHero = lazy(() => import('./components/EventHero'));
 const CoupleStory = lazy(() => import('./components/CoupleStory'));
 const ProgramTimeline = lazy(() => import('./components/ProgramTimeline'));
