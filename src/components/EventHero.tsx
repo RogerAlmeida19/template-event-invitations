@@ -10,7 +10,7 @@ const EventHero: React.FC = () => {
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat scale-105 blur-md"
           style={{
-            backgroundImage: "url('/src/assets/bg/juliush-fairytale-forest-7759927_1920.jpg')",
+            backgroundImage: "url('/assets/bg/juliush-fairytale-forest-7759927_1920.jpg')",
             opacity: 0.85,
             filter: 'blur(8px)'
           }}

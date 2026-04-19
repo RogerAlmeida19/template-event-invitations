@@ -26,7 +26,7 @@ export const eventConfig = {
     enabled: true,
     title: 'Mi Historia',
     content: 'Desde pequeña soñé con este día tan especial. Han sido años de aprendizajes, aventuras y sueños compartidos con mi familia y amigos. Hoy, al cumplir mis XV años, celebro no solo el paso del tiempo, sino la magia de crecer rodeada de amor, alegría y esperanza. ¡Gracias por ser parte de este momento inolvidable en mi vida!',
-    image: '/src/assets/bg/jcoope12-ai-generated-8367677_1920.jpg'
+    image: '/assets/bg/jcoope12-ai-generated-8367677_1920.jpg'
   },
 
   // Programa del evento
