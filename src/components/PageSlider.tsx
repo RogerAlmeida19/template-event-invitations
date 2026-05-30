@@ -10,7 +10,7 @@ interface PageSliderProps {
 
 const variants = {
   enter: (direction: number) => ({
-    y: direction > 0 ? 300 : -300,
+    y: direction > 0 ? "100%" : "-100%",
     opacity: 0,
   }),
   center: {
@@ -18,7 +18,7 @@ const variants = {
     opacity: 1,
   },
   exit: (direction: number) => ({
-    y: direction < 0 ? 300 : -300,
+    y: direction < 0 ? "100%" : "-100%",
     opacity: 0,
   }),
 };
