@@ -83,9 +83,9 @@ export const PageSlider: React.FC<PageSliderProps> = ({
 
     const node = containerRef.current;
     node?.addEventListener("wheel", handleWheel, { passive: false });
-    node?.addEventListener("touchstart", handleTouchStart, { passive: false });
-    node?.addEventListener("touchmove", handleTouchMove, { passive: false });
-    node?.addEventListener("touchend", handleTouchEnd, { passive: false });
+    node?.addEventListener("touchstart", handleTouchStart, { passive: true });
+    node?.addEventListener("touchmove", handleTouchMove, { passive: true });
+    node?.addEventListener("touchend", handleTouchEnd, { passive: true });
     return () => {
       node?.removeEventListener("wheel", handleWheel);
       node?.removeEventListener("touchstart", handleTouchStart);
@@ -100,7 +100,7 @@ export const PageSlider: React.FC<PageSliderProps> = ({
   return (
     <div
       ref={containerRef}
-      className="relative w-full h-full overflow-hidden touch-none select-none"
+      className="relative w-full h-full overflow-hidden select-none"
     >
       <AnimatePresence initial={false} custom={direction}>
         <motion.div
@@ -110,7 +110,7 @@ export const PageSlider: React.FC<PageSliderProps> = ({
           initial="enter"
           animate="center"
           exit="exit"
-          transition={{ type: "spring", stiffness: 300, damping: 30 }}
+          transition={{ type: "tween", duration: 0.35, ease: "easeInOut" }}
           className="absolute w-full h-full overflow-y-auto"
           style={{ WebkitOverflowScrolling: "touch" }}
         >
