@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { eventConfig } from '../config/event';
 
 const CoupleStory: React.FC = () => {
+
+  const [imgError, setImgError] = useState(false);
   if (!eventConfig.settings.showStory || !eventConfig.story.enabled) {
     return null;
   }
@@ -11,7 +13,7 @@ const CoupleStory: React.FC = () => {
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
           <h2
-            className="text-4xl md:text-5xl font-bold text-gray-800 mb-4 font-dancing"
+            className="text-4xl md:text-5xl font-bold text-gray-800 mb-4 font-heading"
           >
             {eventConfig.story.title}
           </h2>
@@ -22,24 +24,28 @@ const CoupleStory: React.FC = () => {
           {/* Texto de la historia */}
           <div className={`space-y-6 ${eventConfig.animations.enabled ? 'animate-fade-in' : ''}`}>
             <p
-              className="text-lg text-gray-700 leading-relaxed"
-              style={{ fontFamily: eventConfig.fonts.body }}
+              className="text-lg text-gray-700 leading-relaxed font-body"
             >
               {eventConfig.story.content}
             </p>
-
-            {/* Información de la pareja eliminada para XV años */}
           </div>
 
           {/* Foto única de la historia */}
           <div className={`flex justify-center ${eventConfig.animations.enabled ? 'animate-fade-in' : ''}`}>
             <div className="relative group overflow-hidden rounded-2xl shadow-lg max-w-md w-full">
-              <img
-                src={eventConfig.story.image}
-                alt="Foto de la historia"
-                className="w-full h-72 object-cover transition-transform duration-300 group-hover:scale-105"
-                style={{ objectPosition: 'center 30%' }}
-              />
+              {!imgError && (
+                <img
+                  src={eventConfig.story.image}
+                  alt="Foto de la historia"
+                  className="w-full h-72 object-cover transition-transform duration-300 group-hover:scale-105"
+                  style={{ objectPosition: 'center 30%' }}
+                  onError={() => {
+                    setImgError(true);
+                    // eslint-disable-next-line no-console
+                    console.warn('No se pudo cargar la imagen de la historia.');
+                  }}
+                />
+              )}
               <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
             </div>
           </div>

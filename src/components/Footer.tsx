@@ -21,14 +21,14 @@ export default function Footer() {
               <div className="w-10 h-10 bg-gradient-to-br from-emerald-500 to-lime-300 rounded-full flex items-center justify-center">
                 <FiHeart className="text-white" size={20} />
               </div>
-              <h3 className="text-xl font-bold text-white">
+              <h3 className="text-xl font-bold text-white font-heading">
                 {eventConfig.event.couple}
               </h3>
             </div>
-            <p className="text-gray-400 mb-4">
+            <p className="text-gray-400 mb-4 font-body">
               {eventConfig.event.description}
             </p>
-            <div className="space-y-2 text-sm text-gray-400">
+            <div className="space-y-2 text-sm text-gray-400 font-body">
               <div className="flex items-center gap-2">
                 <FiMapPin size={16} />
                 <span>{eventConfig.event.location.address}</span>

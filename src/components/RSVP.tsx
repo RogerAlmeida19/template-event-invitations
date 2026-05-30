@@ -13,8 +13,7 @@ const RSVP: React.FC = () => {
       <div className="max-w-2xl mx-auto">
         <div className="text-center mb-8">
           <h2
-            className="text-4xl md:text-5xl font-bold text-gray-800 mb-4"
-            style={{ fontFamily: eventConfig.fonts.heading }}
+            className="text-4xl md:text-5xl font-bold text-gray-800 mb-4 font-heading"
           >
             Confirma tu Asistencia
           </h2>

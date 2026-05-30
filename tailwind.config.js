@@ -30,7 +30,10 @@ export default {
         },
       },
       fontFamily: {
-        sans: ['Segoe UI', 'Roboto', 'sans-serif'],
+        sans: ['Inter', 'Segoe UI', 'Roboto', 'sans-serif'],
+        heading: ['Dancing Script', 'cursive'],
+        accent: ['Playfair Display', 'serif'],
+        body: ['Inter', 'sans-serif'],
       },
     },
   },

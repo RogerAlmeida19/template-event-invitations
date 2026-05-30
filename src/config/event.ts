@@ -132,7 +132,7 @@ export const eventConfig = {
   fonts: {
     heading: 'Dancing Script, cursive',
     body: 'Inter, sans-serif',
-    accent: 'Dancing Script, cursive'
+    accent: 'Playfair Display, serif'
   },
 
   // Configuración adicional

@@ -23,13 +23,13 @@ export default function Header() {
               {businessConfig.business.name.charAt(0)}
             </span>
           </div>
-          <div className="text-xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+          <div className="text-xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent font-heading">
             {businessConfig.business.name}
           </div>
         </div>
 
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex gap-8">
+        <nav className="hidden md:flex gap-8 font-body">
           <button 
             onClick={() => scrollToSection('hero')} 
             className="text-gray-700 hover:text-primary transition font-medium"
