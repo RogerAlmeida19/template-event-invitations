@@ -24,7 +24,7 @@ const CoupleStory: React.FC = () => {
           <div
             className={`space-y-6 ${eventConfig.animations.enabled ? "animate-fade-in" : ""}`}
           >
-            <p className="text-lg text-gray-700 leading-relaxed font-body">
+            <p className="text-lg text-gray-700 leading-relaxed font-body text-center md:text-left">
               {eventConfig.story.content}
             </p>
           </div>
