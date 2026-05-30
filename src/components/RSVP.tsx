@@ -11,6 +11,12 @@ const RSVP: React.FC = () => {
   const [showScrollHint, setShowScrollHint] = useState(true);
   const sectionRef = useRef<HTMLElement>(null);
 
+  // Fallback: ocultar spinner en iOS donde onLoad no siempre se dispara
+  useEffect(() => {
+    const timer = setTimeout(() => setIframeLoaded(true), 4000);
+    return () => clearTimeout(timer);
+  }, []);
+
   useEffect(() => {
     const el = sectionRef.current;
     if (!el) return;
@@ -23,7 +29,7 @@ const RSVP: React.FC = () => {
   }, []);
 
   return (
-    <section ref={sectionRef} className="py-20 px-4 bg-gradient-to-br from-green-50 to-emerald-50 relative h-screen overflow-y-auto flex flex-col items-center">
+    <section ref={sectionRef} className="py-20 px-4 bg-gradient-to-br from-green-50 to-emerald-50 relative h-screen overflow-y-auto flex flex-col items-center" style={{ WebkitOverflowScrolling: "touch" }}>
       <div className="w-full flex flex-col items-center">
         {/* Spinner de carga */}
         <div
@@ -75,6 +81,7 @@ const RSVP: React.FC = () => {
             frameBorder="0"
             marginHeight={0}
             marginWidth={0}
+            scrolling="yes"
             title="Confirmar asistencia"
             className="w-full rounded-xl border-none"
             style={{ minHeight: 500, background: "white" }}

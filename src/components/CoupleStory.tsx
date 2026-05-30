@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { eventConfig } from "../config/event";
-import historiaImg from "../assets/bg/jcoope12-ai-generated-8367677_1920.jpg";
+
+const historiaImg = "/assets/bg/foto-historia.jpeg";
 
 const CoupleStory: React.FC = () => {
   const [imgError, setImgError] = useState(false);
@@ -32,13 +33,13 @@ const CoupleStory: React.FC = () => {
           <div
             className={`flex justify-center ${eventConfig.animations.enabled ? "animate-fade-in" : ""}`}
           >
-            <div className="relative group overflow-hidden rounded-2xl shadow-lg max-w-md w-full">
+            <div className="relative group overflow-hidden rounded-2xl shadow-lg max-w-xl w-full">
               {!imgError && (
                 <img
                   src={historiaImg}
                   alt="Foto de la historia"
-                  className="w-full h-72 object-cover transition-transform duration-300 group-hover:scale-105"
-                  style={{ objectPosition: "center 30%" }}
+                  className="w-full h-80 object-cover transition-transform duration-300 group-hover:scale-105"
+                  style={{ objectPosition: "center 10%" }}
                   onError={() => {
                     setImgError(true);
                     // eslint-disable-next-line no-console
