@@ -55,7 +55,11 @@ export const PageSlider: React.FC<PageSliderProps> = ({
     const minSwipe = 50;
     const handleTouchStart = (e: TouchEvent) => {
       if (sliderLocked) return;
+      // No iniciar swipe si el toque comienza sobre un elemento interactivo
+      const target = e.target as HTMLElement;
+      if (target.closest('button, a, input, textarea, select, [role="button"]')) return;
       touchStartY.current = e.touches[0].clientY;
+      touchEndY.current = e.touches[0].clientY;
     };
     const handleTouchMove = (e: TouchEvent) => {
       if (sliderLocked) return;
