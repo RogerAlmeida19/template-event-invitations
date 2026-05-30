@@ -5,6 +5,7 @@ interface PageSliderProps {
   children: React.ReactNode[];
   page: number;
   setPage: (page: number) => void;
+  sliderLocked?: boolean;
 }
 
 const variants = {
@@ -22,7 +23,7 @@ const variants = {
   }),
 };
 
-export const PageSlider: React.FC<PageSliderProps> = ({ children, page, setPage }) => {
+export const PageSlider: React.FC<PageSliderProps> = ({ children, page, setPage, sliderLocked }) => {
   const [direction, setDirection] = useState(0);
   const lastScroll = useRef(0);
   const containerRef = useRef<HTMLDivElement>(null);
@@ -31,6 +32,7 @@ export const PageSlider: React.FC<PageSliderProps> = ({ children, page, setPage 
 
   useEffect(() => {
     const handleWheel = (e: WheelEvent) => {
+      if (sliderLocked) return;
       if (Math.abs(e.deltaY) < 30) return;
       const now = Date.now();
       if (now - lastScroll.current < 700) return; // evita scroll rápido
@@ -47,12 +49,15 @@ export const PageSlider: React.FC<PageSliderProps> = ({ children, page, setPage 
     // Soporte para swipe táctil
     const minSwipe = 50;
     const handleTouchStart = (e: TouchEvent) => {
+      if (sliderLocked) return;
       touchStartY.current = e.touches[0].clientY;
     };
     const handleTouchMove = (e: TouchEvent) => {
+      if (sliderLocked) return;
       touchEndY.current = e.touches[0].clientY;
     };
     const handleTouchEnd = () => {
+      if (sliderLocked) return;
       const deltaY = touchStartY.current - touchEndY.current;
       const now = Date.now();
       if (Math.abs(deltaY) > minSwipe && now - lastScroll.current > 700) {

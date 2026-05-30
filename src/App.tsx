@@ -19,11 +19,16 @@ function App() {
 
 	// Solo las páginas que van en el slider
 
+	// Para permitir que el slider sepa si debe bloquear la navegación
+	import { useRef } from 'react';
+	const rsvpFormRef = useRef<HTMLDivElement>(null);
+	const [sliderLocked, setSliderLocked] = useState(false);
+
 	const slides = [
 		<Suspense key="hero" fallback={<div className="w-full h-screen flex items-center justify-center">Cargando...</div>}><EventHero /></Suspense>,
 		<Suspense key="story" fallback={<div className="w-full h-screen flex items-center justify-center">Cargando...</div>}><CoupleStory /></Suspense>,
 		<Suspense key="program" fallback={<div className="w-full h-screen flex items-center justify-center">Cargando...</div>}><ProgramTimeline /></Suspense>,
-		<Suspense key="rsvp" fallback={<div className="w-full h-screen flex items-center justify-center">Cargando...</div>}><RSVP /></Suspense>,
+		<Suspense key="rsvp" fallback={<div className="w-full h-screen flex items-center justify-center">Cargando...</div>}><RSVP formRef={rsvpFormRef} setSliderLocked={setSliderLocked} /></Suspense>,
 		<Suspense key="footer" fallback={<div className="w-full h-screen flex items-center justify-center">Cargando...</div>}><Footer /></Suspense>
 	];
 
@@ -51,7 +56,7 @@ function App() {
 				/>
 			</AnimatePresence>
 			<div className="bg-overlay" />
-			<PageSlider page={page} setPage={setPage}>
+			<PageSlider page={page} setPage={setPage} sliderLocked={sliderLocked}>
 				{slides}
 			</PageSlider>
 		</div>

@@ -1,7 +1,12 @@
 import React, { useState } from 'react';
 import { eventConfig } from '../config/event';
 
-const RSVP: React.FC = () => {
+interface RSVPProps {
+  formRef?: React.RefObject<HTMLDivElement>;
+  setSliderLocked?: (locked: boolean) => void;
+}
+
+const RSVP: React.FC<RSVPProps> = ({ formRef, setSliderLocked }) => {
   if (!eventConfig.settings.showRSVP || !eventConfig.rsvp.enabled) {
     return null;
   }
@@ -20,7 +25,15 @@ const RSVP: React.FC = () => {
           {/* Botón Volver eliminado, navegación normal por PageSlider */}
         </div>
         {/* Spinner de carga */}
-        <div id="form-iframe-container" style={{ position: 'relative', minHeight: 500 }}>
+        <div
+          id="form-iframe-container"
+          ref={formRef}
+          style={{ position: 'relative', minHeight: 500 }}
+          onMouseEnter={() => setSliderLocked && setSliderLocked(true)}
+          onMouseLeave={() => setSliderLocked && setSliderLocked(false)}
+          onTouchStart={() => setSliderLocked && setSliderLocked(true)}
+          onTouchEnd={() => setSliderLocked && setSliderLocked(false)}
+        >
           {!iframeLoaded && (
             <div id="form-spinner" style={{
               position: 'absolute',
