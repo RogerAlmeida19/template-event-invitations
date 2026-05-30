@@ -4,7 +4,7 @@ export const eventConfig = {
   event: {
     type: 'quince', // 'wedding', 'quince', 'birthday', 'anniversary', etc.
     title: 'Mis XV Años',
-    subtitle: 'Una celebración mágica llena de hadas y sueños',
+    subtitle: 'Una celebración mágica llena de sueños',
     couple: 'Sol Valentina',
     date: '2026-07-05T22:00:00', // ISO format - IMPORTANTE: Actualiza esta fecha
     location: {
@@ -15,7 +15,7 @@ export const eventConfig = {
     },
     dressCode: 'Elegante sport',
     hashtag: '#SolValentinaXV',
-    description: 'Con gran ilusión te invito a celebrar mis XV años, una noche de hadas, música y magia en un bosque encantado. ¡Ven a compartir este momento especial conmigo!'
+    description: 'Con gran ilusión te invito a celebrar mis XV años, música y magia en un bosque encantado. ¡Ven a compartir este momento especial conmigo!'
   },
 
   // Información de los protagonistas (para bodas, XV años, etc.)

@@ -1,7 +1,5 @@
 # Template de Invitaciones de Eventos
 
-
-
 ## ✨ Características
 
 - 🎯 **Contador regresivo** en tiempo real hasta la fecha del evento
@@ -20,13 +18,16 @@
 ## 🚀 Inicio Rápido
 
 ### 1. Clona el repositorio
+
 ```bash
 git clone https://github.com/tu-usuario/template-event-invitations.git
 cd template-event-invitations
 ```
 
 ### Opción B: Si ya tienes el código local
+
 Si ya tienes el código descargado, ejecuta:
+
 ```bash
 # En Windows
 setup-github.bat
@@ -40,11 +41,13 @@ git push -u origin main
 ```
 
 ### 2. Instala las dependencias
+
 ```bash
 npm install
 ```
 
 ### 3. Personaliza la configuración
+
 Edita el archivo `src/config/event.ts` con tu información:
 
 ```typescript
@@ -58,6 +61,7 @@ event: {
 ```
 
 ### 4. Inicia el servidor de desarrollo
+
 ```bash
 npm run dev
 ```
@@ -65,6 +69,7 @@ npm run dev
 Abre [http://localhost:5173](http://localhost:5173) en tu navegador.
 
 ### 5. Construye para producción
+
 ```bash
 npm run build
 npm run preview
@@ -92,6 +97,7 @@ src/
 ## 🎨 Personalización
 
 ### Colores del Tema
+
 Modifica los colores en `src/config/event.ts`:
 
 ```typescript
@@ -104,6 +110,7 @@ theme: {
 ```
 
 ### Tipos de Evento Soportados
+
 - `wedding` - Bodas
 - `quince` - XV Años/Quinceañeras
 - `birthday` - Cumpleaños
@@ -111,6 +118,7 @@ theme: {
 - `other` - Otros eventos
 
 ### Animaciones
+
 Controla las animaciones en la configuración:
 
 ```typescript
@@ -125,21 +133,25 @@ animations: {
 ## 📸 Imágenes Recomendadas
 
 ### Formatos Soportados
+
 - JPG, PNG, WebP
 - Resolución mínima: 800x600px
 - Relación de aspecto: 4:3 o 16:9
 
 ### Fuentes de Imágenes Gratuitas
+
 - [Unsplash](https://unsplash.com) - Fotos de alta calidad gratuitas
 - [Pexels](https://pexels.com) - Biblioteca gratuita de fotos
 - [Pixabay](https://pixabay.com) - Imágenes y videos gratuitos
 
 ### Optimización
+
 Las imágenes se cargan de forma diferida (lazy loading) para un mejor rendimiento.
 
 ## 📧 Sistema RSVP
 
 ### Características
+
 - Formulario completo con validación
 - Información de contacto múltiple (teléfono, email, WhatsApp)
 - Selección de número de invitados
@@ -148,6 +160,7 @@ Las imágenes se cargan de forma diferida (lazy loading) para un mejor rendimien
 - Confirmación visual de envío
 
 ### Configuración
+
 ```typescript
 rsvp: {
   enabled: true,
@@ -166,18 +179,21 @@ rsvp: {
 ### Opciones Gratuitas Recomendadas
 
 #### Vercel (Recomendado)
+
 ```bash
 npm install -g vercel
 vercel --prod
 ```
 
 #### Netlify
+
 ```bash
 npm run build
 # Sube la carpeta `dist` a Netlify
 ```
 
 #### GitHub Pages
+
 ```bash
 npm install -g gh-pages
 npm run build
@@ -185,6 +201,7 @@ npm run deploy
 ```
 
 ### Dominios Personalizados
+
 Todos los servicios anteriores soportan dominios personalizados gratuitos.
 
 ## 🛠️ Tecnologías Utilizadas
@@ -254,21 +271,21 @@ Todo se configura en **`src/config/business.ts`**:
 ```typescript
 export const businessConfig = {
   business: {
-    name: 'Tu Nombre',
-    tagline: 'Tu eslogan',
-    email: 'tu@email.com',
+    name: "Tu Nombre",
+    tagline: "Tu eslogan",
+    email: "tu@email.com",
     // ... más opciones
   },
   socialLinks: [
-    { name: 'Instagram', url: 'https://instagram.com/...' }
+    { name: "Instagram", url: "https://instagram.com/..." },
     // ...
   ],
   gallery: [
-    { title: 'Proyecto 1', image: 'url' }
+    { title: "Proyecto 1", image: "url" },
     // ...
   ],
   // ... más configuración
-}
+};
 ```
 
 ## 📦 Tecnologías
@@ -304,6 +321,7 @@ npm run lint     # Valida código
 ## 📱 Demo
 
 Para ver una demostración en vivo del template:
+
 1. Clona el repositorio
 2. Ejecuta `npm install && npm run dev`
 3. Visita `http://localhost:5175/`
@@ -329,4 +347,4 @@ MIT
 
 ---
 
-**Hecho con ❤️ para emprendedores y pequeños negocios**
+**Hecho con ❤️**

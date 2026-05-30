@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { eventConfig } from '../config/event';
+import React, { useState } from "react";
+import { eventConfig } from "../config/event";
 
 interface RSVPProps {
   formRef?: React.RefObject<HTMLDivElement>;
@@ -16,34 +16,51 @@ const RSVP: React.FC<RSVPProps> = ({ formRef, setSliderLocked }) => {
   return (
     <section className="py-20 px-6 bg-gradient-to-br from-green-50 to-emerald-50 relative">
       <div className="max-w-2xl mx-auto">
-        <div className="text-center mb-8">
-          <h2
-            className="text-4xl md:text-5xl font-bold text-gray-800 mb-4 font-heading"
-          >
-            Confirma tu Asistencia
-          </h2>
-          {/* Botón Volver eliminado, navegación normal por PageSlider */}
-        </div>
         {/* Spinner de carga */}
         <div
           id="form-iframe-container"
           ref={formRef}
-          style={{ position: 'relative', minHeight: 500 }}
+          style={{ position: "relative", minHeight: 500 }}
           onMouseEnter={() => setSliderLocked && setSliderLocked(true)}
           onMouseLeave={() => setSliderLocked && setSliderLocked(false)}
           onTouchStart={() => setSliderLocked && setSliderLocked(true)}
           onTouchEnd={() => setSliderLocked && setSliderLocked(false)}
         >
           {!iframeLoaded && (
-            <div id="form-spinner" style={{
-              position: 'absolute',
-              top: 0, left: 0, right: 0, bottom: 0,
-              display: 'flex', alignItems: 'center', justifyContent: 'center',
-              background: 'rgba(255,255,255,0.7)', zIndex: 10
-            }}>
-              <svg className="animate-spin h-10 w-10 text-emerald-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
-                <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z" />
+            <div
+              id="form-spinner"
+              style={{
+                position: "absolute",
+                top: 0,
+                left: 0,
+                right: 0,
+                bottom: 0,
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                background: "rgba(255,255,255,0.7)",
+                zIndex: 10,
+              }}
+            >
+              <svg
+                className="animate-spin h-10 w-10 text-emerald-500"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+              >
+                <circle
+                  className="opacity-25"
+                  cx="12"
+                  cy="12"
+                  r="10"
+                  stroke="currentColor"
+                  strokeWidth="4"
+                />
+                <path
+                  className="opacity-75"
+                  fill="currentColor"
+                  d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z"
+                />
               </svg>
             </div>
           )}
@@ -56,7 +73,7 @@ const RSVP: React.FC<RSVPProps> = ({ formRef, setSliderLocked }) => {
             marginWidth={0}
             title="Confirmar asistencia"
             className="w-full rounded-xl border-none"
-            style={{ minHeight: 500, background: 'white' }}
+            style={{ minHeight: 500, background: "white" }}
             allowFullScreen
             onLoad={() => setIframeLoaded(true)}
           />
