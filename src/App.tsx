@@ -1,5 +1,5 @@
 
-import { useState, Suspense, lazy } from 'react';
+import { useState, Suspense, lazy, useRef } from 'react';
 const EventHero = lazy(() => import('./components/EventHero'));
 const CoupleStory = lazy(() => import('./components/CoupleStory'));
 const ProgramTimeline = lazy(() => import('./components/ProgramTimeline'));
@@ -19,8 +19,6 @@ function App() {
 
 	// Solo las páginas que van en el slider
 
-	// Para permitir que el slider sepa si debe bloquear la navegación
-	import { useRef } from 'react';
 	const rsvpFormRef = useRef<HTMLDivElement>(null);
 	const [sliderLocked, setSliderLocked] = useState(false);
 
