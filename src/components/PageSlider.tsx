@@ -90,6 +90,9 @@ export const PageSlider: React.FC<PageSliderProps> = ({
     };
   }, [page, children.length]);
 
+  const isLastPage = page === children.length - 1;
+  void isLastPage; // reservado para uso futuro
+
   return (
     <div
       ref={containerRef}

@@ -75,7 +75,7 @@ function App() {
           transition={{ duration: 0.7 }}
           className="absolute inset-0 -z-10"
           style={{
-            backgroundImage: `url(${backgrounds[bgIndex]})`,
+            backgroundImage: `url(${backgrounds[bgIndex % backgrounds.length]})`,
             backgroundSize: "cover",
             backgroundPosition: "center",
             backgroundAttachment: "fixed",
@@ -99,6 +99,21 @@ function App() {
         <PageSlider page={page} setPage={setPage} sliderLocked={sliderLocked}>
           {slides}
         </PageSlider>
+      )}
+      {/* Indicador de navegación entre páginas */}
+      {!showRSVP && page < slides.length - 1 && (
+        <motion.div
+          className="fixed bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1 z-[100] pointer-events-none"
+          animate={{ y: [0, 10, 0] }}
+          transition={{ repeat: Infinity, duration: 1.5, ease: "easeInOut" }}
+        >
+          <span className="bg-black/30 text-white text-xs px-3 py-1 rounded-full tracking-widest uppercase backdrop-blur-sm select-none">
+            deslizar
+          </span>
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 5v14M12 19l-5-5M12 19l5-5" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
+          </svg>
+        </motion.div>
       )}
     </div>
   );
