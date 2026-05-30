@@ -14,19 +14,16 @@ const backgrounds = [
 ];
 
 function App() {
-	// 0: Hero, 1: Story, 2: Program, 3: RSVP, 4: Footer
+	// 0: Hero, 1: Story, 2: Program, 3: Footer
 	const [page, setPage] = useState(0);
-
-	// Solo las páginas que van en el slider
-
+	const [showRSVP, setShowRSVP] = useState(false);
 	const rsvpFormRef = useRef<HTMLDivElement>(null);
 	const [sliderLocked, setSliderLocked] = useState(false);
 
 	const slides = [
 		<Suspense key="hero" fallback={<div className="w-full h-screen flex items-center justify-center">Cargando...</div>}><EventHero /></Suspense>,
 		<Suspense key="story" fallback={<div className="w-full h-screen flex items-center justify-center">Cargando...</div>}><CoupleStory /></Suspense>,
-		<Suspense key="program" fallback={<div className="w-full h-screen flex items-center justify-center">Cargando...</div>}><ProgramTimeline /></Suspense>,
-		<Suspense key="rsvp" fallback={<div className="w-full h-screen flex items-center justify-center">Cargando...</div>}><RSVP formRef={rsvpFormRef} setSliderLocked={setSliderLocked} /></Suspense>,
+		<Suspense key="program" fallback={<div className="w-full h-screen flex items-center justify-center">Cargando...</div>}><ProgramTimeline onShowRSVP={() => setShowRSVP(true)} /></Suspense>,
 		<Suspense key="footer" fallback={<div className="w-full h-screen flex items-center justify-center">Cargando...</div>}><Footer /></Suspense>
 	];
 
@@ -37,7 +34,7 @@ function App() {
 		<div className="w-full h-screen relative overflow-hidden">
 			<AnimatePresence mode="wait">
 				<motion.div
-					key={page}
+					key={showRSVP ? 'rsvp' : page}
 					initial={{ opacity: 0 }}
 					animate={{ opacity: 1 }}
 					exit={{ opacity: 0 }}
@@ -54,9 +51,21 @@ function App() {
 				/>
 			</AnimatePresence>
 			<div className="bg-overlay" />
-			<PageSlider page={page} setPage={setPage} sliderLocked={sliderLocked}>
-				{slides}
-			</PageSlider>
+			{showRSVP ? (
+				<div className="w-full h-full flex flex-col items-center justify-center">
+					<button
+						className="absolute top-6 left-6 bg-white/80 hover:bg-white text-emerald-700 font-bold px-4 py-2 rounded shadow z-10"
+						onClick={() => setShowRSVP(false)}
+					>
+						Volver
+					</button>
+					<RSVP />
+				</div>
+			) : (
+				<PageSlider page={page} setPage={setPage} sliderLocked={sliderLocked}>
+					{slides}
+				</PageSlider>
+			)}
 		</div>
 	);
 }

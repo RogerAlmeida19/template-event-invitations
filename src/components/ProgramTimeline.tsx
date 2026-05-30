@@ -2,7 +2,11 @@ import React from "react";
 import { eventConfig } from "../config/event";
 
 // Componente responsive y simple para mostrar el programa de eventos
-const ProgramTimeline: React.FC = () => {
+interface ProgramTimelineProps {
+  onShowRSVP?: () => void;
+}
+
+const ProgramTimeline: React.FC<ProgramTimelineProps> = ({ onShowRSVP }) => {
   if (!eventConfig.settings.showProgram) return null;
   return (
     <section className="py-10 px-4 bg-white">
@@ -45,6 +49,14 @@ const ProgramTimeline: React.FC = () => {
               {eventConfig.event.dressCode}
             </p>
           </div>
+        </div>
+        <div className="mt-6 text-center">
+          <button
+            className="mt-4 px-6 py-3 bg-emerald-500 hover:bg-emerald-600 text-white font-bold rounded-xl shadow transition-all duration-200"
+            onClick={onShowRSVP}
+          >
+            Confirmar Asistencia
+          </button>
         </div>
       </div>
     </section>

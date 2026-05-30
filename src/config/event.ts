@@ -9,8 +9,8 @@ export const eventConfig = {
     date: '2026-07-05T22:00:00', // ISO format - IMPORTANTE: Actualiza esta fecha
     location: {
       name: 'Salón Clahe Eventos',
-      address: 'Av. Ejemplo 1234, Ciudad, Provincia',
-      maps: 'https://maps.google.com/?q=Salón+Clahe+Eventos,+Av.+Ejemplo+1234',
+      address: 'Bartolome Mitre 674, Florencio Varela',
+      maps: 'https://maps.app.goo.gl/ka8iu3vbvV6BZxRQA',
       ceremony: 'Salón Clahe Eventos'
     },
     dressCode: 'Elegante sport',
