@@ -34,6 +34,8 @@ export const PageSlider: React.FC<PageSliderProps> = ({
   const containerRef = useRef<HTMLDivElement>(null);
   const touchStartY = useRef(0);
   const touchEndY = useRef(0);
+  const touchStartTarget = useRef<EventTarget | null>(null);
+  const minSwipe = 50;
 
   useEffect(() => {
     const handleWheel = (e: WheelEvent) => {
@@ -51,22 +53,23 @@ export const PageSlider: React.FC<PageSliderProps> = ({
       }
     };
 
-    // Soporte para swipe táctil
-    const minSwipe = 50;
     const handleTouchStart = (e: TouchEvent) => {
       if (sliderLocked) return;
-      // No iniciar swipe si el toque comienza sobre un elemento interactivo
       const target = e.target as HTMLElement;
-      if (target.closest('button, a, input, textarea, select, [role="button"]')) return;
+      if (target.closest('button, a, input, textarea, select, [role="button"]')) {
+        touchStartTarget.current = null;
+        return;
+      }
+      touchStartTarget.current = e.target;
       touchStartY.current = e.touches[0].clientY;
       touchEndY.current = e.touches[0].clientY;
     };
     const handleTouchMove = (e: TouchEvent) => {
-      if (sliderLocked) return;
+      if (sliderLocked || !touchStartTarget.current) return;
       touchEndY.current = e.touches[0].clientY;
     };
     const handleTouchEnd = () => {
-      if (sliderLocked) return;
+      if (sliderLocked || !touchStartTarget.current) return;
       const deltaY = touchStartY.current - touchEndY.current;
       const now = Date.now();
       if (Math.abs(deltaY) > minSwipe && now - lastScroll.current > 700) {
