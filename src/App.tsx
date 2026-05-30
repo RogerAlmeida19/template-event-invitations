@@ -1,4 +1,4 @@
-import { useState, Suspense, lazy, useRef } from "react";
+import { useState, Suspense, lazy } from "react";
 const EventHero = lazy(() => import("./components/EventHero"));
 const CoupleStory = lazy(() => import("./components/CoupleStory"));
 const ProgramTimeline = lazy(() => import("./components/ProgramTimeline"));
@@ -16,8 +16,7 @@ function App() {
   // 0: Hero, 1: Story, 2: Program, 3: Footer
   const [page, setPage] = useState(0);
   const [showRSVP, setShowRSVP] = useState(false);
-  const rsvpFormRef = useRef<HTMLDivElement>(null);
-  const [sliderLocked, setSliderLocked] = useState(false);
+  const [sliderLocked] = useState(false);
 
   const slides = [
     <Suspense
