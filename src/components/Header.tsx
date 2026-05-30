@@ -1,17 +1,17 @@
-import { useState } from 'react'
-import { FiMenu, FiX } from 'react-icons/fi'
-import { businessConfig } from '../config/business'
+import { useState } from "react";
+import { FiMenu, FiX } from "react-icons/fi";
+import { businessConfig } from "../config/business";
 
 export default function Header() {
-  const [isOpen, setIsOpen] = useState(false)
+  const [isOpen, setIsOpen] = useState(false);
 
-  const toggleMenu = () => setIsOpen(!isOpen)
+  const toggleMenu = () => setIsOpen(!isOpen);
 
   const scrollToSection = (id: string) => {
-    const element = document.getElementById(id)
-    element?.scrollIntoView({ behavior: 'smooth' })
-    setIsOpen(false)
-  }
+    const element = document.getElementById(id);
+    element?.scrollIntoView({ behavior: "smooth" });
+    setIsOpen(false);
+  };
 
   return (
     <header className="fixed w-full bg-white bg-opacity-95 backdrop-blur-md shadow-md z-50 border-b border-gray-100">
@@ -30,32 +30,32 @@ export default function Header() {
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex gap-8 font-body">
-          <button 
-            onClick={() => scrollToSection('hero')} 
+          <button
+            onClick={() => scrollToSection("hero")}
             className="text-gray-700 hover:text-primary transition font-medium"
           >
             Inicio
           </button>
-          <button 
-            onClick={() => scrollToSection('about')} 
+          <button
+            onClick={() => scrollToSection("about")}
             className="text-gray-700 hover:text-primary transition font-medium"
           >
             Acerca de
           </button>
-          <button 
-            onClick={() => scrollToSection('gallery')} 
+          <button
+            onClick={() => scrollToSection("gallery")}
             className="text-gray-700 hover:text-primary transition font-medium"
           >
             Galería
           </button>
-          <button 
-            onClick={() => scrollToSection('location')} 
+          <button
+            onClick={() => scrollToSection("location")}
             className="text-gray-700 hover:text-primary transition font-medium"
           >
             Ubicación
           </button>
-          <button 
-            onClick={() => scrollToSection('social')} 
+          <button
+            onClick={() => scrollToSection("social")}
             className="btn-secondary"
           >
             Contacto
@@ -63,8 +63,8 @@ export default function Header() {
         </nav>
 
         {/* Mobile Menu Button */}
-        <button 
-          className="md:hidden text-2xl p-2 hover:bg-gray-100 rounded-lg transition" 
+        <button
+          className="md:hidden text-2xl p-2 hover:bg-gray-100 rounded-lg transition"
           onClick={toggleMenu}
         >
           {isOpen ? <FiX /> : <FiMenu />}
@@ -75,32 +75,32 @@ export default function Header() {
       {isOpen && (
         <div className="md:hidden bg-white border-t shadow-lg">
           <nav className="container-custom py-4 flex flex-col gap-4">
-            <button 
-              onClick={() => scrollToSection('hero')} 
+            <button
+              onClick={() => scrollToSection("hero")}
               className="text-left text-gray-700 hover:text-primary transition font-medium"
             >
               Inicio
             </button>
-            <button 
-              onClick={() => scrollToSection('about')} 
+            <button
+              onClick={() => scrollToSection("about")}
               className="text-left text-gray-700 hover:text-primary transition font-medium"
             >
               Acerca de
             </button>
-            <button 
-              onClick={() => scrollToSection('gallery')} 
+            <button
+              onClick={() => scrollToSection("gallery")}
               className="text-left text-gray-700 hover:text-primary transition font-medium"
             >
               Galería
             </button>
-            <button 
-              onClick={() => scrollToSection('location')} 
+            <button
+              onClick={() => scrollToSection("location")}
               className="text-left text-gray-700 hover:text-primary transition font-medium"
             >
               Ubicación
             </button>
-            <button 
-              onClick={() => scrollToSection('social')} 
+            <button
+              onClick={() => scrollToSection("social")}
               className="btn-secondary w-full text-center"
             >
               Contacto
@@ -109,5 +109,5 @@ export default function Header() {
         </div>
       )}
     </header>
-  )
+  );
 }

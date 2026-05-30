@@ -22,14 +22,25 @@ const ProgramTimeline: React.FC<ProgramTimelineProps> = ({ onShowRSVP }) => {
             >
               {/* Hora */}
               <div className="flex flex-row items-center justify-center w-36 min-w-[7.5rem] pr-10 gap-2">
-                <span className="text-emerald-700 font-accent text-xl sm:text-2xl" style={{ fontWeight: 400 }}>{item.time}</span>
+                <span
+                  className="text-emerald-700 font-accent text-xl sm:text-2xl"
+                  style={{ fontWeight: 400 }}
+                >
+                  {item.time}
+                </span>
                 <span className="text-2xl">{item.icon}</span>
               </div>
               {/* Contenido */}
               <div className="flex-1 text-left flex flex-col justify-center">
-                <h3 className="text-base md:text-lg font-semibold text-gray-800 mb-1 font-body">{item.title}</h3>
-                <p className="text-gray-700 text-sm mb-1 font-body">{item.description}</p>
-                <p className="text-xs text-emerald-700 font-body">{item.location}</p>
+                <h3 className="text-base md:text-lg font-semibold text-gray-800 mb-1 font-body">
+                  {item.title}
+                </h3>
+                <p className="text-gray-700 text-sm mb-1 font-body">
+                  {item.description}
+                </p>
+                <p className="text-xs text-emerald-700 font-body">
+                  {item.location}
+                </p>
               </div>
             </li>
           ))}
@@ -37,9 +48,7 @@ const ProgramTimeline: React.FC<ProgramTimelineProps> = ({ onShowRSVP }) => {
         {/* Información adicional */}
         <div className="mt-8 text-center">
           <div className="bg-gradient-to-r from-emerald-50 to-lime-100 rounded-xl p-4 border border-emerald-100">
-            <h3
-              className="text-lg font-bold text-gray-800 mb-2 font-heading"
-            >
+            <h3 className="text-lg font-bold text-gray-800 mb-2 font-heading">
               Código de Vestimenta
             </h3>
             <p
@@ -52,7 +61,7 @@ const ProgramTimeline: React.FC<ProgramTimelineProps> = ({ onShowRSVP }) => {
         </div>
         <div className="mt-6 text-center">
           <button
-            className="mt-4 px-6 py-3 bg-emerald-500 hover:bg-emerald-600 text-white font-bold rounded-xl shadow transition-all duration-200"
+            className="mt-4 px-6 py-3 bg-gradient-to-r from-emerald-50 to-lime-100 hover:from-emerald-100 hover:to-lime-200 text-emerald-800 font-bold rounded-xl shadow border border-emerald-100 transition-all duration-200"
             onClick={onShowRSVP}
           >
             Confirmar Asistencia

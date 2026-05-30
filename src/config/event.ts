@@ -15,7 +15,7 @@ export const eventConfig = {
     },
     dressCode: 'Elegante sport',
     hashtag: '#SolValentinaXV',
-    description: 'Con gran ilusión te invito a celebrar mis XV años, música y magia en un bosque encantado. ¡Ven a compartir este momento especial conmigo!'
+    description: 'Con gran ilusión te invito a celebrar mis XV años, música y magia. ¡Ven a compartir este momento especial conmigo!'
   },
 
   // Información de los protagonistas (para bodas, XV años, etc.)
@@ -93,9 +93,9 @@ export const eventConfig = {
     deadline: '2024-05-15',
     message: 'Confirma tu asistencia antes del 15 de mayo',
     contact: {
-      phone: '+1 (555) 123-4567',
+      phone: '+54 9 11 2279-9014',
       email: 'rsvp@nuestraboda.com',
-      whatsapp: 'https://wa.me/1234567890'
+      whatsapp: 'https://wa.me/5491122799014'
     },
     note: 'Por favor indica si asistirás acompañado y cualquier restricción alimentaria.'
   },

@@ -1,5 +1,5 @@
 import React from "react";
-import bosqueFondo from '../assets/bg/juliush-fairytale-forest-7759927_1920.jpg';
+import bosqueFondo from "../assets/bg/juliush-fairytale-forest-7759927_1920.jpg";
 import { eventConfig } from "../config/event";
 import Countdown from "./Countdown";
 
@@ -13,10 +13,13 @@ const EventHero: React.FC = () => {
           style={{
             backgroundImage: `url(${bosqueFondo})`,
             opacity: 0.85,
-            filter: 'blur(8px)'
+            filter: "blur(8px)",
           }}
         />
-        <div className="absolute inset-0 bg-gradient-to-br from-white/60 via-white/30 to-emerald-100/40" style={{mixBlendMode:'lighten'}} />
+        <div
+          className="absolute inset-0 bg-gradient-to-br from-white/60 via-white/30 to-emerald-100/40"
+          style={{ mixBlendMode: "lighten" }}
+        />
       </div>
 
       {/* Hadas flotando y partículas mágicas */}
@@ -33,9 +36,30 @@ const EventHero: React.FC = () => {
           xmlns="http://www.w3.org/2000/svg"
         >
           <circle cx="24" cy="24" r="10" fill="#FFF9C4" opacity="0.7" />
-          <ellipse cx="24" cy="18" rx="5" ry="1.7" fill="#FFE082" opacity="0.7" />
-          <ellipse cx="18" cy="28" rx="2.5" ry="1.2" fill="#FFF59D" opacity="0.7" />
-          <ellipse cx="30" cy="28" rx="2.5" ry="1.2" fill="#FFFDE7" opacity="0.7" />
+          <ellipse
+            cx="24"
+            cy="18"
+            rx="5"
+            ry="1.7"
+            fill="#FFE082"
+            opacity="0.7"
+          />
+          <ellipse
+            cx="18"
+            cy="28"
+            rx="2.5"
+            ry="1.2"
+            fill="#FFF59D"
+            opacity="0.7"
+          />
+          <ellipse
+            cx="30"
+            cy="28"
+            rx="2.5"
+            ry="1.2"
+            fill="#FFFDE7"
+            opacity="0.7"
+          />
           <circle cx="24" cy="24" r="2.5" fill="#fffde4" />
         </svg>
       </span>
@@ -52,7 +76,14 @@ const EventHero: React.FC = () => {
           xmlns="http://www.w3.org/2000/svg"
         >
           <circle cx="24" cy="24" r="8" fill="#FFF9C4" opacity="0.7" />
-          <ellipse cx="24" cy="18" rx="4" ry="1.2" fill="#FFE082" opacity="0.7" />
+          <ellipse
+            cx="24"
+            cy="18"
+            rx="4"
+            ry="1.2"
+            fill="#FFE082"
+            opacity="0.7"
+          />
           <ellipse cx="18" cy="28" rx="2" ry="1" fill="#FFF59D" opacity="0.7" />
           <ellipse cx="30" cy="28" rx="2" ry="1" fill="#FFFDE7" opacity="0.7" />
           <circle cx="24" cy="24" r="2" fill="#fffde4" />
@@ -71,9 +102,30 @@ const EventHero: React.FC = () => {
           xmlns="http://www.w3.org/2000/svg"
         >
           <circle cx="24" cy="24" r="9" fill="#FFF9C4" opacity="0.7" />
-          <ellipse cx="24" cy="18" rx="4.5" ry="1.5" fill="#FFE082" opacity="0.7" />
-          <ellipse cx="18" cy="28" rx="2.2" ry="1.1" fill="#FFF59D" opacity="0.7" />
-          <ellipse cx="30" cy="28" rx="2.2" ry="1.1" fill="#FFFDE7" opacity="0.7" />
+          <ellipse
+            cx="24"
+            cy="18"
+            rx="4.5"
+            ry="1.5"
+            fill="#FFE082"
+            opacity="0.7"
+          />
+          <ellipse
+            cx="18"
+            cy="28"
+            rx="2.2"
+            ry="1.1"
+            fill="#FFF59D"
+            opacity="0.7"
+          />
+          <ellipse
+            cx="30"
+            cy="28"
+            rx="2.2"
+            ry="1.1"
+            fill="#FFFDE7"
+            opacity="0.7"
+          />
           <circle cx="24" cy="24" r="2.2" fill="#fffde4" />
         </svg>
       </span>
@@ -120,7 +172,9 @@ const EventHero: React.FC = () => {
       {/* Partículas mágicas */}
       {[...Array(16)].map((_, i) => {
         // Tamaños y animaciones variados
-        const sizes = [8, 10, 12, 14, 16, 20, 24, 6, 18, 22, 9, 13, 7, 11, 15, 17];
+        const sizes = [
+          8, 10, 12, 14, 16, 20, 24, 6, 18, 22, 9, 13, 7, 11, 15, 17,
+        ];
         const style = {
           width: sizes[i % sizes.length],
           height: sizes[i % sizes.length],
@@ -155,9 +209,7 @@ const EventHero: React.FC = () => {
           className={`mb-8 ${eventConfig.animations.enabled ? "animate-fade-in" : ""}`}
           style={{ animationDelay: "0.4s" }}
         >
-          <h2
-            className="font-dancing italic text-3xl md:text-5xl text-gray-700 mb-2 whitespace-nowrap"
-          >
+          <h2 className="font-dancing italic text-3xl md:text-5xl text-gray-700 mb-2 whitespace-nowrap">
             {eventConfig.event.title}
           </h2>
           <p
@@ -166,7 +218,6 @@ const EventHero: React.FC = () => {
           >
             {eventConfig.event.subtitle}
           </p>
-
         </div>
 
         {/* Información del evento */}

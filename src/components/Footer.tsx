@@ -1,11 +1,5 @@
 import { eventConfig } from "../config/event";
-import {
-  FiMessageCircle,
-  FiPhone,
-  FiMail,
-  FiMapPin,
-  FiHeart,
-} from "react-icons/fi";
+import { FiMapPin, FiHeart } from "react-icons/fi";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -113,28 +107,26 @@ export default function Footer() {
             </div>
 
             {/* Hashtag */}
-            <div className="mt-6">
-              <p
-                className="text-emerald-300 font-medium"
-                style={{ fontFamily: eventConfig.fonts.accent }}
-              >
-                {eventConfig.event.hashtag}
-*/}
-              </p>
-            </div>
-          </div>
-        </div>
-
-        {/* Divider */}
-        <div className="border-t border-gray-800 pt-8">
-          <div className="flex flex-col md:flex-row justify-between items-center">
+          <div className="mt-6">
             <p
-              className="text-gray-400 text-sm mb-4 md:mb-0"
-              style={{ fontFamily: eventConfig.fonts.body }}
+              className="text-emerald-300 font-medium"
+              style={{ fontFamily: eventConfig.fonts.accent }}
             >
-              © {currentYear} {eventConfig.event.couple}. Hecho con ❤️
+              {eventConfig.event.hashtag}
             </p>
           </div>
+        </div>
+      </div>
+
+      {/* Divider */}
+      <div className="border-t border-gray-800 pt-8">
+        <div className="flex flex-col md:flex-row justify-between items-center">
+          <p
+            className="text-gray-400 text-sm mb-4 md:mb-0"
+            style={{ fontFamily: eventConfig.fonts.body }}
+          >
+            © {currentYear} {eventConfig.event.couple}. Hecho con 💜
+          </p>
         </div>
       </div>
     </footer>

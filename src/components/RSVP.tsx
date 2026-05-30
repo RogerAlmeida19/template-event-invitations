@@ -1,12 +1,7 @@
 import React, { useState } from "react";
 import { eventConfig } from "../config/event";
 
-interface RSVPProps {
-  formRef?: React.RefObject<HTMLDivElement>;
-  setSliderLocked?: (locked: boolean) => void;
-}
-
-const RSVP: React.FC<RSVPProps> = ({ formRef, setSliderLocked }) => {
+const RSVP: React.FC = () => {
   if (!eventConfig.settings.showRSVP || !eventConfig.rsvp.enabled) {
     return null;
   }
@@ -14,17 +9,12 @@ const RSVP: React.FC<RSVPProps> = ({ formRef, setSliderLocked }) => {
   const [iframeLoaded, setIframeLoaded] = useState(false);
 
   return (
-    <section className="py-20 px-6 bg-gradient-to-br from-green-50 to-emerald-50 relative">
-      <div className="max-w-2xl mx-auto">
+    <section className="py-20 px-4 bg-gradient-to-br from-green-50 to-emerald-50 relative h-screen overflow-y-auto flex flex-col items-center">
+      <div className="w-full flex flex-col items-center">
         {/* Spinner de carga */}
         <div
           id="form-iframe-container"
-          ref={formRef}
-          style={{ position: "relative", minHeight: 500 }}
-          onMouseEnter={() => setSliderLocked && setSliderLocked(true)}
-          onMouseLeave={() => setSliderLocked && setSliderLocked(false)}
-          onTouchStart={() => setSliderLocked && setSliderLocked(true)}
-          onTouchEnd={() => setSliderLocked && setSliderLocked(false)}
+          style={{ position: "relative", minHeight: 500, width: '100%', maxWidth: 700 }}
         >
           {!iframeLoaded && (
             <div
@@ -77,6 +67,12 @@ const RSVP: React.FC<RSVPProps> = ({ formRef, setSliderLocked }) => {
             allowFullScreen
             onLoad={() => setIframeLoaded(true)}
           />
+        </div>
+        {/* Contacto */}
+        <div className="mt-8 text-center">
+          <p className="text-lg font-bold text-emerald-700">¿Dudas o problemas para confirmar?</p>
+          <p className="text-md text-gray-700 mt-2">Teléfono: <a href={`tel:${eventConfig.rsvp.contact.phone}`} className="underline hover:text-emerald-600">{eventConfig.rsvp.contact.phone}</a></p>
+          <p className="text-md text-gray-700 mt-1">WhatsApp: <a href={eventConfig.rsvp.contact.whatsapp} target="_blank" rel="noopener noreferrer" className="underline hover:text-emerald-600">Enviar mensaje</a></p>
         </div>
       </div>
     </section>
