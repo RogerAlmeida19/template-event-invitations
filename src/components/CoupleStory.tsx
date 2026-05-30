@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { eventConfig } from '../config/event';
+import historiaImg from '../assets/bg/jcoope12-ai-generated-8367677_1920.jpg';
 
 const CoupleStory: React.FC = () => {
 
@@ -35,7 +36,7 @@ const CoupleStory: React.FC = () => {
             <div className="relative group overflow-hidden rounded-2xl shadow-lg max-w-md w-full">
               {!imgError && (
                 <img
-                  src={eventConfig.story.image}
+                  src={historiaImg}
                   alt="Foto de la historia"
                   className="w-full h-72 object-cover transition-transform duration-300 group-hover:scale-105"
                   style={{ objectPosition: 'center 30%' }}
